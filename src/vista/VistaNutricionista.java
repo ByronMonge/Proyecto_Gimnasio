@@ -149,6 +149,15 @@ public class VistaNutricionista extends javax.swing.JInternalFrame {
         this.txtCodigoNutricionista = txtCodigoNutricionista;
     }
 
+    public JSpinner getSpinnerSalario() {
+        return spinnerSalario;
+    }
+
+    public void setSpinnerSalario(JSpinner spinnerSalario) {
+        this.spinnerSalario = spinnerSalario;
+    }
+
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -173,6 +182,8 @@ public class VistaNutricionista extends javax.swing.JInternalFrame {
         btnGuardar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         txtCodigoNutricionista = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        spinnerSalario = new javax.swing.JSpinner();
         jPanel1 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -205,11 +216,11 @@ public class VistaNutricionista extends javax.swing.JInternalFrame {
         jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 116, 191, -1));
 
         jLabel5.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        jLabel5.setText("Años de experiencia:");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(466, 75, -1, -1));
+        jLabel5.setText("Salario:");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, -1, -1));
 
         spinnerAniosExperiencia.setModel(new javax.swing.SpinnerNumberModel());
-        jPanel2.add(spinnerAniosExperiencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, 80, -1));
+        jPanel2.add(spinnerAniosExperiencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 70, 80, -1));
 
         jLabel15.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel15.setText("Apellido:");
@@ -239,6 +250,13 @@ public class VistaNutricionista extends javax.swing.JInternalFrame {
         btnCancelar.setText("Cancelar");
         jPanel2.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 400, -1, -1));
         jPanel2.add(txtCodigoNutricionista, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 70, 45, -1));
+
+        jLabel7.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        jLabel7.setText("Años de experiencia:");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(466, 75, -1, -1));
+
+        spinnerSalario.setModel(new javax.swing.SpinnerNumberModel());
+        jPanel2.add(spinnerSalario, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, 120, -1));
 
         javax.swing.GroupLayout jDlgNutricionistaLayout = new javax.swing.GroupLayout(jDlgNutricionista.getContentPane());
         jDlgNutricionista.getContentPane().setLayout(jDlgNutricionistaLayout);
@@ -322,13 +340,13 @@ public class VistaNutricionista extends javax.swing.JInternalFrame {
 
         tblNutricionista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Código de nutricionista", "Cédula", "Nombre", "Apellido", "Años de experiencia"
+                "Código de nutricionista", "Cédula", "Nombre", "Apellido", "Años de experiencia", "Salario"
             }
         ));
         jScrollPane1.setViewportView(tblNutricionista);
@@ -370,12 +388,14 @@ public class VistaNutricionista extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner spinnerAniosExperiencia;
+    private javax.swing.JSpinner spinnerSalario;
     private javax.swing.JTable tblNutricionista;
     private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtBuscar;
