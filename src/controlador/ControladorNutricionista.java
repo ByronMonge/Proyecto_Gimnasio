@@ -18,7 +18,8 @@ public class ControladorNutricionista {
 
     ModeloNutricionista modelo;
     VistaNutricionista vista;
-     VistaPrincipal p = new VistaPrincipal();
+    VistaPrincipal p = new VistaPrincipal();
+
     public ControladorNutricionista(ModeloNutricionista modelo, VistaNutricionista vista) {
         this.modelo = modelo;
         this.vista = vista;
@@ -58,7 +59,7 @@ public class ControladorNutricionista {
 
         List<Nutricionista> nutricionista = modelo.listaNutricionistaTabla();
         nutricionista.stream().forEach(n -> {
-            String[] datos = {String.valueOf(n.getNutri_codigo()), n.getPer_cedula(), n.getPer_nombre(), n.getPer_apellido(), String.valueOf(n.getNutri_aniosExperiencia())};
+            Object[] datos = {String.valueOf(n.getNutri_codigo()), n.getPer_cedula(), n.getPer_nombre(), n.getPer_apellido(), String.valueOf(n.getNutri_aniosExperiencia()), String.valueOf(n.getNutri_salario())};
             tabla.addRow(datos);
         });
     }
@@ -84,6 +85,7 @@ public class ControladorNutricionista {
 
                 //Setear datos de nutricionista
                 modelo.setNutri_aniosExperiencia(Integer.parseInt(vista.getSpinnerAniosExperiencia().getValue().toString()));
+                modelo.setNutri_salario(Double.parseDouble(vista.getSpinnerSalario().getValue().toString()));
 
                 if (persona.crearPersona()) {
                     //Guarda el codigo de la persona
@@ -121,7 +123,7 @@ public class ControladorNutricionista {
 
             // Setear datos de instructor
             modelo.setNutri_aniosExperiencia(Integer.parseInt(vista.getSpinnerAniosExperiencia().getValue().toString()));
-
+            modelo.setNutri_salario(Double.parseDouble(vista.getSpinnerSalario().getValue().toString()));
             modelo.setNutri_codper(persona.traerCodigoDePersonaCreada());
 
             if (persona.modificarPersona()) {
@@ -177,6 +179,8 @@ public class ControladorNutricionista {
                     //Cargar datos de instructor
                     vista.getTxtCodigoNutricionista().setText(String.valueOf(nutricionista.getNutri_codigo()));
                     vista.getSpinnerAniosExperiencia().setValue(nutricionista.getNutri_aniosExperiencia());
+                    vista.getSpinnerSalario().setValue(nutricionista.getNutri_salario());
+
                     bloquearcampos();
                 }
             });
@@ -212,7 +216,7 @@ public class ControladorNutricionista {
 
         List<Nutricionista> nutricionistas = modelo.listaNutricionistaTabla();
         nutricionistas.stream().forEach(n -> {
-            String[] datos = {String.valueOf(n.getNutri_codigo()), n.getPer_cedula(), n.getPer_nombre(), n.getPer_apellido(), String.valueOf(n.getNutri_aniosExperiencia())};
+            String[] datos = {String.valueOf(n.getNutri_codigo()), n.getPer_cedula(), n.getPer_nombre(), n.getPer_apellido(), String.valueOf(n.getNutri_aniosExperiencia()), String.valueOf(n.getNutri_salario())};
             tabla.addRow(datos);
         });
     }
@@ -271,6 +275,7 @@ public class ControladorNutricionista {
         vista.getTxtDireccion().setText(" ");
         vista.getTxtTelefono().setText(" ");
         vista.getSpinnerAniosExperiencia().setValue(0);
+        vista.getSpinnerSalario().setValue(0);
         vista.getFechaDeNacimiento().setDate(null);
 
     }
