@@ -8,23 +8,27 @@ public class Nutricionista extends Persona {
     private int nutri_codper;
     private int nutri_aniosExperiencia;
     private String nutri_estado;
+    private Double nutri_salario;
 
     public Nutricionista() {
     }
 
-    public Nutricionista(int nutri_codigo, int nutri_codper, int nutri_aniosExperiencia, String nutri_estado) {
+    
+    public Nutricionista(int nutri_codigo, int nutri_codper, int nutri_aniosExperiencia, String nutri_estado, Double nutri_salario) {
         this.nutri_codigo = nutri_codigo;
         this.nutri_codper = nutri_codper;
         this.nutri_aniosExperiencia = nutri_aniosExperiencia;
         this.nutri_estado = nutri_estado;
+        this.nutri_salario = nutri_salario;
     }
 
-    public Nutricionista(int nutri_codigo, int nutri_codper, int nutri_aniosExperiencia, String nutri_estado, int per_codigo, String per_cedula, String per_nombre, String per_apellido, Date per_fechaNac, String per_telefono, String per_direccion) {
+    public Nutricionista(int nutri_codigo, int nutri_codper, int nutri_aniosExperiencia, String nutri_estado, Double nutri_salario, int per_codigo, String per_cedula, String per_nombre, String per_apellido, Date per_fechaNac, String per_telefono, String per_direccion) {
         super(per_codigo, per_cedula, per_nombre, per_apellido, per_fechaNac, per_telefono, per_direccion);
         this.nutri_codigo = nutri_codigo;
         this.nutri_codper = nutri_codper;
         this.nutri_aniosExperiencia = nutri_aniosExperiencia;
         this.nutri_estado = nutri_estado;
+        this.nutri_salario = nutri_salario;
     }
 
     public int getNutri_codigo() {
@@ -57,5 +61,13 @@ public class Nutricionista extends Persona {
 
     public void setNutri_estado(String nutri_estado) {
         this.nutri_estado = nutri_estado;
+    }
+
+    public Double getNutri_salario() {
+        return nutri_salario;
+    }
+
+    public void setNutri_salario(Double nutri_salario) {
+        this.nutri_salario = nutri_salario;
     }
 }
