@@ -15,22 +15,22 @@ public class ModeloNutricionista extends Nutricionista {
     public ModeloNutricionista() {
     }
 
-    public ModeloNutricionista(int nutri_codigo, int nutri_codper, int nutri_aniosExperiencia, String nutri_estado) {
-        super(nutri_codigo, nutri_codper, nutri_aniosExperiencia, nutri_estado);
+    public ModeloNutricionista(int nutri_codigo, int nutri_codper, int nutri_aniosExperiencia, String nutri_estado, Double nutri_salario) {
+        super(nutri_codigo, nutri_codper, nutri_aniosExperiencia, nutri_estado, nutri_salario);
     }
 
-    public ModeloNutricionista(int nutri_codigo, int nutri_codper, int nutri_aniosExperiencia, String nutri_estado, int per_codigo, String per_cedula, String per_nombre, String per_apellido, Date per_fechaNac, String per_telefono, String per_direccion) {
-        super(nutri_codigo, nutri_codper, nutri_aniosExperiencia, nutri_estado, per_codigo, per_cedula, per_nombre, per_apellido, per_fechaNac, per_telefono, per_direccion);
+    public ModeloNutricionista(int nutri_codigo, int nutri_codper, int nutri_aniosExperiencia, String nutri_estado, Double nutri_salario, int per_codigo, String per_cedula, String per_nombre, String per_apellido, Date per_fechaNac, String per_telefono, String per_direccion) {
+        super(nutri_codigo, nutri_codper, nutri_aniosExperiencia, nutri_estado, nutri_salario, per_codigo, per_cedula, per_nombre, per_apellido, per_fechaNac, per_telefono, per_direccion);
     }
 
     public boolean crearNutricionista() {
-        String sql = "INSERT INTO nutricionista(nut_codper, nut_aniosexperiencia, nut_estado)VALUES (" + getNutri_codper() + ", " + getNutri_aniosExperiencia() + ", 'A');";
+        String sql = "INSERT INTO nutricionista(nut_codper, nut_aniosexperiencia,nut_sueldo,nut_estado)VALUES (" + getNutri_codper() + ", " + getNutri_aniosExperiencia() + ", " + getNutri_salario() + ", 'A');";
 
         return conpg.accion(sql);
     }
 
     public boolean modificarNutricionista() {
-        String sql = "UPDATE nutricionista SET nut_aniosexperiencia = '" + getNutri_aniosExperiencia() + " ' WHERE nut_codigo = " + getNutri_codigo() + ";";
+        String sql = "UPDATE nutricionista SET nut_aniosexperiencia = " + getNutri_aniosExperiencia() + ", nut_sueldo = '"+ getNutri_salario() + "' WHERE nut_codigo = " + getNutri_codigo() + ";";
         return conpg.accion(sql);
     }
 
@@ -68,6 +68,7 @@ public class ModeloNutricionista extends Nutricionista {
                 nutricionista.setNutri_codigo(rs.getInt("nut_codigo"));
                 nutricionista.setNutri_codper(rs.getInt("nut_codper"));
                 nutricionista.setNutri_aniosExperiencia(rs.getInt("nut_aniosExperiencia"));
+                nutricionista.setNutri_salario(rs.getDouble("nut_sueldo"));
                 nutricionista.setNutri_estado(rs.getString("nut_estado"));
 
                 lista.add(nutricionista);
