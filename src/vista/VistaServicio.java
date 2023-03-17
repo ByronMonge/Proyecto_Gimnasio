@@ -278,6 +278,7 @@ public class VistaServicio extends javax.swing.JInternalFrame {
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
+        tblServicio.setBackground(new java.awt.Color(153, 204, 255));
         tblServicio.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
