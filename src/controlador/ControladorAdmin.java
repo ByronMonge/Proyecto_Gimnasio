@@ -2,6 +2,8 @@ package controlador;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -30,16 +32,22 @@ public class ControladorAdmin {
         this.vista = vista;
         vista.setVisible(true);
         vista.setSize(p.getEscritorioPrincipal().getWidth(), p.getEscritorioPrincipal().getHeight());
-        //cargartabladeadmin;
+        cargarTablaDeAdministrador();
     }
 
     public void iniciarControl() {
         vista.getBtnAgregar().addActionListener(l -> abrirjDlgAdmin());
-        vista.getBtnGuardar().addActionListener(l -> crearModificarInstructor());
+        vista.getBtnGuardar().addActionListener(l -> crearModificarAdmin());
         vista.getBtnActualizar().addActionListener(l -> cargarTablaDeAdministrador());
         vista.getBtnModificar().addActionListener(l -> cargarDatosAdministradorEnTXT());
-        vista.getBtnEliminar().addActionListener(l -> eliminarInstructor());
+        vista.getBtnEliminar().addActionListener(l -> eliminarAdmin());
         vista.getBtnCancelar().addActionListener(l -> cancelar());
+
+//        vista.getPassword().setText("");
+//        vista.getLbocultar().setVisible(true);
+//        vista.getLbmostrar().setVisible(false);
+        verContrasenia();
+        ocultarContrasenia();
 
         buscarRegistros();
     }
@@ -47,13 +55,13 @@ public class ControladorAdmin {
     public void abrirjDlgAdmin() {
 
         vista.getDlgAdmin().setVisible(true);
-        vista.getDlgAdmin().setSize(889, 495);
+        vista.getDlgAdmin().setSize(615, 699);
         vista.getDlgAdmin().setLocationRelativeTo(null);
         vista.getDlgAdmin().setName("Crear nuevo admin");
         vista.getDlgAdmin().setTitle("Crear nuevo admin");
 
         //Quitar visibilidad del codigo del instructor
-        //vista.getTxtCodigoInstructor().setVisible(false);
+        vista.getTxtcodigoadmin().setVisible(false);
         //desbloquearCampos();
         LimpiarTablas();
     }
@@ -69,7 +77,7 @@ public class ControladorAdmin {
         });
     }
 
-    public void crearModificarInstructor() {
+    public void crearModificarAdmin() {
 
         if ("Crear nuevo admin".equals(vista.getDlgAdmin().getName())) {
 
@@ -92,6 +100,7 @@ public class ControladorAdmin {
                 //Setear datos de administrador
                 modelo.setAdm_usuario(vista.getTxtusuario().getText());
                 modelo.setAdm_clave(vista.getPassword().getText());
+
                 if (persona.crearPersona()) {
                     //Guarda el codigo de la persona
                     modelo.setAdm_codper(persona.traerCodigoDePersonaCreada());
@@ -131,7 +140,7 @@ public class ControladorAdmin {
             if (persona.modificarPersona()) {
                 //Seteo el codigo del instructor tomado del txt
                 System.out.println("Persona modificada");
-                modelo.setAdm_codigo(Integer.parseInt(vista.getTxtusuario().getText()));
+                modelo.setAdm_codigo(Integer.parseInt(vista.getTxtcodigoadmin().getText()));
 
                 if (modelo.modificarAdministrador()) {
                     JOptionPane.showMessageDialog(null, "La información se modificó satisfactoriamente");
@@ -156,38 +165,40 @@ public class ControladorAdmin {
 
             //Abrir jDialog de campos de Docente
             vista.getDlgAdmin().setVisible(true);
-            vista.getDlgAdmin().setName("Modificar instructor");
-            vista.getDlgAdmin().setSize(889, 495);
+            vista.getDlgAdmin().setName("Modificar Administrador");
+            vista.getDlgAdmin().setSize(615, 699);
             vista.getDlgAdmin().setLocationRelativeTo(null);
-            vista.getDlgAdmin().setTitle("Modificar instructor");
+            vista.getDlgAdmin().setTitle("Modificar Administrador");
             //bloquearCampos();
 
             //Quitar visibilidad
-            //vista.getTxtCodigoInstructor().setVisible(false);
+            vista.getTxtcodigoadmin().setVisible(false);
             //ModeloPersona modeloPersona = new ModeloPersona();
             List<Administrador> listai = modelo.listaAdminTabla();
 
-            listai.stream().forEach(instructor -> {
+            listai.stream().forEach(Administrador -> {
 
-                if (instructor.getPer_cedula().equals(vista.getTblAdministrador().getValueAt(fila, 1).toString())) {
+                if (Administrador.getPer_cedula().equals(vista.getTblAdministrador().getValueAt(fila, 1).toString())) {
                     //Cargar datos de persona
 
-                    vista.getTxtCedula().setText(instructor.getPer_cedula());
-                    vista.getTxtNombre().setText(instructor.getPer_nombre());
-                    vista.getTxtApellido().setText(instructor.getPer_apellido());
-                    vista.getFechaDeNacimiento().setDate(instructor.getPer_fechaNac());
-                    vista.getTxtTelefono().setText(instructor.getPer_telefono());
-                    vista.getTxtDireccion().setText(instructor.getPer_direccion());
+                    vista.getTxtCedula().setText(Administrador.getPer_cedula());
+                    vista.getTxtNombre().setText(Administrador.getPer_nombre());
+                    vista.getTxtApellido().setText(Administrador.getPer_apellido());
+                    vista.getFechaDeNacimiento().setDate(Administrador.getPer_fechaNac());
+                    vista.getTxtTelefono().setText(Administrador.getPer_telefono());
+                    vista.getTxtDireccion().setText(Administrador.getPer_direccion());
 
                     //Setear datos de administrador
-                    modelo.setAdm_usuario(vista.getTxtusuario().getText());
-                    modelo.setAdm_clave(vista.getPassword().getText());
+                    vista.getTxtcodigoadmin().setText(String.valueOf(Administrador.getAdm_codigo()));
+                    vista.getTxtusuario().setText(Administrador.getAdm_usuario());
+                    vista.getPassword().setText(Administrador.getAdm_clave());
 
                 }
             });
         }
     }
-        public void eliminarInstructor() {
+
+    public void eliminarAdmin() {
 
         int fila = vista.getTblAdministrador().getSelectedRow();
 
@@ -210,7 +221,8 @@ public class ControladorAdmin {
             }
         }
     }
-            public void buscarRegistros() {
+
+    public void buscarRegistros() {
 
         KeyListener eventoTeclado = new KeyListener() {//Crear un objeto de tipo keyListener(Es una interface) por lo tanto se debe implementar sus metodos abstractos
 
@@ -262,5 +274,70 @@ public class ControladorAdmin {
     public void cancelar() {
         vista.getDlgAdmin().setVisible(false);
     }
-}
 
+    public void verContrasenia() {
+        MouseListener evento = new MouseListener() {
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                vista.getPassword().setEchoChar('●');
+                vista.getLbocultar().setVisible(true);
+                vista.getLbmostrar().setVisible(false);
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+            }
+        };
+
+        vista.getLbmostrar().addMouseListener(evento);
+    }
+
+    public void ocultarContrasenia() {
+        MouseListener evento = new MouseListener() {
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+                vista.getPassword().setEchoChar((char) 0);
+                vista.getLbmostrar().setVisible(true);
+                vista.getLbocultar().setVisible(false);
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        };
+
+        vista.getLbocultar().addMouseListener(evento);
+    }
+
+}

@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import main.inicio;
 import modelo.ModeloAdministrador;
 
 /**
@@ -43,6 +44,14 @@ public class VistaAdmin extends javax.swing.JFrame {
         return btnCancelar;
     }
 
+    public JTextField getTxtcodigoadmin() {
+        return txtcodigoadmin;
+    }
+
+    public void setTxtcodigoadmin(JTextField txtcodigoadmin) {
+        this.txtcodigoadmin = txtcodigoadmin;
+    }
+
     public void setBtnCancelar(JButton btnCancelar) {
         this.btnCancelar = btnCancelar;
     }
@@ -71,28 +80,12 @@ public class VistaAdmin extends javax.swing.JFrame {
         this.btnModificar = btnModificar;
     }
 
-    public JButton getBtnbuscarper() {
-        return btnbuscarper;
-    }
-
-    public void setBtnbuscarper(JButton btnbuscarper) {
-        this.btnbuscarper = btnbuscarper;
-    }
-
     public JDialog getDlgAdmin() {
         return dlgAdmin;
     }
 
     public void setDlgAdmin(JDialog dlgAdmin) {
         this.dlgAdmin = dlgAdmin;
-    }
-
-    public JDialog getDlgcargarpers() {
-        return dlgcargarpers;
-    }
-
-    public void setDlgcargarpers(JDialog dlgcargarpers) {
-        this.dlgcargarpers = dlgcargarpers;
     }
 
     public JDateChooser getFechaDeNacimiento() {
@@ -220,8 +213,7 @@ public class VistaAdmin extends javax.swing.JFrame {
         password = new javax.swing.JPasswordField();
         lbmostrar = new javax.swing.JLabel();
         lbocultar = new javax.swing.JLabel();
-        btnbuscarper = new javax.swing.JButton();
-        dlgcargarpers = new javax.swing.JDialog();
+        txtcodigoadmin = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         txtBuscar = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
@@ -288,8 +280,6 @@ public class VistaAdmin extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel10.setText("Usuario:");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, -1, -1));
-
-        password.setText("jPasswordField1");
         jPanel2.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 480, 190, 30));
 
         lbmostrar.setBackground(new java.awt.Color(255, 204, 51));
@@ -301,9 +291,7 @@ public class VistaAdmin extends javax.swing.JFrame {
         lbocultar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbocultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/visible.png"))); // NOI18N
         jPanel2.add(lbocultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 480, 30, 30));
-
-        btnbuscarper.setText("Buscar");
-        jPanel2.add(btnbuscarper, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, -1, -1));
+        jPanel2.add(txtcodigoadmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 40, -1));
 
         javax.swing.GroupLayout dlgAdminLayout = new javax.swing.GroupLayout(dlgAdmin.getContentPane());
         dlgAdmin.getContentPane().setLayout(dlgAdminLayout);
@@ -313,18 +301,7 @@ public class VistaAdmin extends javax.swing.JFrame {
         );
         dlgAdminLayout.setVerticalGroup(
             dlgAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 654, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout dlgcargarpersLayout = new javax.swing.GroupLayout(dlgcargarpers.getContentPane());
-        dlgcargarpers.getContentPane().setLayout(dlgcargarpersLayout);
-        dlgcargarpersLayout.setHorizontalGroup(
-            dlgcargarpersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 788, Short.MAX_VALUE)
-        );
-        dlgcargarpersLayout.setVerticalGroup(
-            dlgcargarpersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 704, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 699, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -433,6 +410,11 @@ public class VistaAdmin extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
        
+        VistaAdmin visadm = new VistaAdmin();
+        ModeloAdministrador model = new ModeloAdministrador();
+        ControladorAdmin con = new ControladorAdmin(model, visadm);
+        con.iniciarControl();
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -442,9 +424,7 @@ public class VistaAdmin extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnModificar;
-    private javax.swing.JButton btnbuscarper;
     private javax.swing.JDialog dlgAdmin;
-    private javax.swing.JDialog dlgcargarpers;
     private com.toedter.calendar.JDateChooser fechaDeNacimiento;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -471,6 +451,7 @@ public class VistaAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtTelefono;
+    private javax.swing.JTextField txtcodigoadmin;
     private javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
 }

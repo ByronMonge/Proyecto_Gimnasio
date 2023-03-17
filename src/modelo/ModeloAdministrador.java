@@ -28,13 +28,13 @@ public class ModeloAdministrador extends Administrador {
     }
     
     public boolean crearAdministrador() {
-        String sql = "INSERT INTO administrador(adm_codigo, adm_usuario, adm_clave, adm_estado) VALUES (" + getAdm_codigo() + ",'" + getAdm_usuario() + "', '" + getAdm_clave() + "', 'A');";
+        String sql = "INSERT INTO administrador( adm_codper, adm_usuario,adm_contrasenia, adm_estado) VALUES (" + getAdm_codper()+ ",'" + getAdm_usuario() + "', '" + getAdm_clave() + "', 'A');";
 
         return conpg.accion(sql);
     }
 
     public boolean modificarAdministrador() {
-        String sql = "UPDATE administrador SET adm_clave = '" + getAdm_clave()+ "', adm_usuario = '" + getAdm_usuario() + "' WHERE adm_codigo = " + getAdm_codigo() + ";";
+        String sql = "UPDATE administrador SET adm_contrasenia = '" + getAdm_clave()+ "', adm_usuario = '" + getAdm_usuario() + "' WHERE adm_codigo = " + getAdm_codigo() + ";";
 
         return conpg.accion(sql);
     }
@@ -50,7 +50,7 @@ public class ModeloAdministrador extends Administrador {
             //Me retorna un "List" de "instructor"
             List<Administrador> lista = new ArrayList<>();
 
-            String sql = "select * from persona p, administrador a where p.per_codigo = a.adm_codper and ins_estado = 'A';";
+            String sql = "select * from persona p, administrador a where p.per_codigo = a.adm_codper and adm_estado = 'A';";
 
             ResultSet rs = conpg.consulta(sql); //La consulta nos devuelve un "ResultSet"
 
@@ -73,7 +73,7 @@ public class ModeloAdministrador extends Administrador {
                 administrador.setAdm_codigo(rs.getInt("adm_codigo"));
                 administrador.setAdm_codper(rs.getInt("adm_codper"));
                 administrador.setAdm_usuario(rs.getString("adm_usuario"));
-                administrador.setAdm_clave(rs.getString("adm_clave"));
+                administrador.setAdm_clave(rs.getString("adm_contrasenia"));
                 administrador.setAdm_estado(rs.getString("adm_estado"));
 
                 lista.add(administrador); //Agrego los datos a la lista
