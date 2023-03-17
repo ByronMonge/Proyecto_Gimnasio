@@ -124,6 +124,21 @@ public class VistaServicio extends javax.swing.JInternalFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        btnEliminar1 = new javax.swing.JButton();
+        btnActualizar1 = new javax.swing.JButton();
+        btnModificar1 = new javax.swing.JButton();
+        btnCrear1 = new javax.swing.JButton();
+        txtBuscar1 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblServicio1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
@@ -192,8 +207,7 @@ public class VistaServicio extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)))
+                    .addComponent(jLabel2))
                 .addContainerGap())
         );
 
@@ -212,9 +226,143 @@ public class VistaServicio extends javax.swing.JInternalFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
         );
 
+        jInternalFrame1.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jPanel6.setBackground(new java.awt.Color(209, 232, 230));
+
+        jLabel17.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 51, 153));
+        jLabel17.setText("REGISTRAR SERVICIO");
+
+        jLabel14.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel14.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 51, 153));
+        jLabel14.setText("GIMNASIO ONE- PIECE");
+
+        btnEliminar1.setBackground(new java.awt.Color(255, 255, 204));
+        btnEliminar1.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        btnEliminar1.setText("Eliminar");
+
+        btnActualizar1.setBackground(new java.awt.Color(255, 255, 204));
+        btnActualizar1.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        btnActualizar1.setText("Actualizar");
+
+        btnModificar1.setBackground(new java.awt.Color(255, 255, 204));
+        btnModificar1.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        btnModificar1.setText("Modificar");
+
+        btnCrear1.setBackground(new java.awt.Color(255, 255, 204));
+        btnCrear1.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        btnCrear1.setText("Guardar");
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel7.setText("Buscar:");
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LOGO.jpg"))); // NOI18N
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/peso.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel17)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addComponent(btnCrear1)
+                        .addGap(29, 29, 29)
+                        .addComponent(btnModificar1)
+                        .addGap(31, 31, 31)
+                        .addComponent(btnActualizar1)
+                        .addGap(31, 31, 31)
+                        .addComponent(btnEliminar1)
+                        .addGap(24, 24, 24))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel9)
+                        .addGap(26, 26, 26))))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel14)
+                                .addComponent(jLabel9))))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel17)))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7)
+                    .addComponent(btnCrear1)
+                    .addComponent(btnModificar1)
+                    .addComponent(btnActualizar1)
+                    .addComponent(btnEliminar1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        tblServicio1.setBackground(new java.awt.Color(232, 242, 185));
+        tblServicio1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Código del servicio", "Nombre", "Precio"
+            }
+        ));
+        jScrollPane2.setViewportView(tblServicio1);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
+        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
+        jInternalFrame1Layout.setHorizontalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jInternalFrame1Layout.setVerticalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 204));
+        jPanel2.setBackground(new java.awt.Color(209, 232, 230));
 
         jLabel16.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(0, 51, 153));
@@ -225,19 +373,19 @@ public class VistaServicio extends javax.swing.JInternalFrame {
         jLabel13.setForeground(new java.awt.Color(0, 51, 153));
         jLabel13.setText("GIMNASIO ONE- PIECE");
 
-        btnEliminar.setBackground(new java.awt.Color(255, 102, 102));
+        btnEliminar.setBackground(new java.awt.Color(255, 255, 204));
         btnEliminar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnEliminar.setText("Eliminar");
 
-        btnActualizar.setBackground(new java.awt.Color(255, 102, 102));
+        btnActualizar.setBackground(new java.awt.Color(255, 255, 204));
         btnActualizar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnActualizar.setText("Actualizar");
 
-        btnModificar.setBackground(new java.awt.Color(255, 102, 102));
+        btnModificar.setBackground(new java.awt.Color(255, 255, 204));
         btnModificar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnModificar.setText("Modificar");
 
-        btnCrear.setBackground(new java.awt.Color(255, 102, 102));
+        btnCrear.setBackground(new java.awt.Color(255, 255, 204));
         btnCrear.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnCrear.setText("Guardar");
 
@@ -246,7 +394,7 @@ public class VistaServicio extends javax.swing.JInternalFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LOGO.jpg"))); // NOI18N
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/estrellas (1).png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/peso.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -306,7 +454,7 @@ public class VistaServicio extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        tblServicio.setBackground(new java.awt.Color(153, 204, 255));
+        tblServicio.setBackground(new java.awt.Color(232, 242, 185));
         tblServicio.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -332,7 +480,7 @@ public class VistaServicio extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -352,29 +500,44 @@ public class VistaServicio extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;
+    private javax.swing.JButton btnActualizar1;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnCrear;
+    private javax.swing.JButton btnCrear1;
     private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnEliminar1;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btnModificar1;
     private javax.swing.JDialog jDlgServicio;
+    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSpinner spinnerCosto;
     private javax.swing.JTable tblServicio;
+    private javax.swing.JTable tblServicio1;
     private javax.swing.JTextField txtBuscar;
+    private javax.swing.JTextField txtBuscar1;
     private javax.swing.JTextField txtCodigoServicio;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
