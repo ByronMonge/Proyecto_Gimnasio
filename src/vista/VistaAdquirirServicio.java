@@ -389,6 +389,22 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
         this.spinnerSueldoNut = spinnerSueldoNut;
     }
 
+    public JButton getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public void setBtnCancelar(JButton btnCancelar) {
+        this.btnCancelar = btnCancelar;
+    }
+
+    public JButton getBtnGuardar() {
+        return btnGuardar;
+    }
+
+    public void setBtnGuardar(JButton btnGuardar) {
+        this.btnGuardar = btnGuardar;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -439,6 +455,8 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
         spinnerSueldoIns = new javax.swing.JSpinner();
         spinnerSueldoNut = new javax.swing.JSpinner();
         spinnerCostoSer = new javax.swing.JSpinner();
+        btnGuardar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
         jDlgBuscarCliente = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
@@ -550,6 +568,10 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
         jLabel27.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel27.setText("Fecha de inicio:");
 
+        btnGuardar.setText("Guardar");
+
+        btnCancelar.setText("Cancelar");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -619,7 +641,11 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
                                         .addGap(114, 114, 114)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(spinnerMesesNut, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(spinnerSueldoNut, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addComponent(spinnerSueldoNut, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(btnGuardar)
+                                        .addGap(89, 89, 89)
+                                        .addComponent(btnCancelar)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(btnBuscarNut)
@@ -650,9 +676,9 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
                         .addGap(118, 118, 118))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnCalcular)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -742,11 +768,15 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
                     .addComponent(jLabel19)
                     .addComponent(spinnerMesesNut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCalcular)
                     .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGuardar)
+                    .addComponent(btnCancelar))
+                .addGap(35, 35, 35))
         );
 
         javax.swing.GroupLayout jDlgAdquirirServicioLayout = new javax.swing.GroupLayout(jDlgAdquirirServicio.getContentPane());
@@ -991,13 +1021,13 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
 
         tblAdquirirServicio.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Código", "Cédula del cliente", "Nombre y apellido del cliente", "Servicio", "Nombre y apellido del instructor", "Nombre y apellido del nutricionista"
+                "Código", "Cédula del cliente", "Nombre y apellido del cliente", "Nombre y apellido del instructor", "Nombre y apellido del nutricionista", "Servicio", "Costo total"
             }
         ));
         jScrollPane1.setViewportView(tblAdquirirServicio);
@@ -1028,12 +1058,14 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnBuscarNut;
     private javax.swing.JButton btnBuscarSer;
     private javax.swing.JButton btnCalcular;
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnCargarCli;
     private javax.swing.JButton btnCargarIns;
     private javax.swing.JButton btnCargarNut;
     private javax.swing.JButton btnCargarSer;
     private javax.swing.JButton btnCrear;
     private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnModificar;
     private com.toedter.calendar.JDateChooser fechaInicio;
     private javax.swing.JDialog jDlgAdquirirServicio;
