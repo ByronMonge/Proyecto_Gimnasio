@@ -228,22 +228,6 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
         this.txtBuscarCli = txtBuscarCli;
     }
 
-    public JTextField getTxtBuscarCli1() {
-        return txtBuscarIns;
-    }
-
-    public void setTxtBuscarCli1(JTextField txtBuscarCli1) {
-        this.txtBuscarIns = txtBuscarCli1;
-    }
-
-    public JTextField getTxtBuscarCli2() {
-        return txtBuscarNut;
-    }
-
-    public void setTxtBuscarCli2(JTextField txtBuscarCli2) {
-        this.txtBuscarNut = txtBuscarCli2;
-    }
-
     public JTextField getTxtBuscarSer() {
         return txtBuscarSer;
     }
@@ -386,6 +370,22 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
 
     public void setTxtCodigoServicio(JTextField txtCodigoServicio) {
         this.txtCodigoServicio = txtCodigoServicio;
+    }
+
+    public JTextField getTxtBuscarIns() {
+        return txtBuscarIns;
+    }
+
+    public void setTxtBuscarIns(JTextField txtBuscarIns) {
+        this.txtBuscarIns = txtBuscarIns;
+    }
+
+    public JTextField getTxtBuscarNut() {
+        return txtBuscarNut;
+    }
+
+    public void setTxtBuscarNut(JTextField txtBuscarNut) {
+        this.txtBuscarNut = txtBuscarNut;
     }
 
     @SuppressWarnings("unchecked")
@@ -836,7 +836,7 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
         jDlgBuscarInstructor.getContentPane().setLayout(jDlgBuscarInstructorLayout);
         jDlgBuscarInstructorLayout.setHorizontalGroup(
             jDlgBuscarInstructorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
         );
         jDlgBuscarInstructorLayout.setVerticalGroup(
             jDlgBuscarInstructorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
