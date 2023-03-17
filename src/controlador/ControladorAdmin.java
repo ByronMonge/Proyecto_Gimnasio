@@ -11,16 +11,31 @@ import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import modelo.Administrador;
-import modelo.Instructor;
 import modelo.ModeloAdministrador;
 import modelo.ModeloPersona;
 import vista.VistaAdmin;
 import vista.VistaPrincipal;
 
-/**
- *
- * @author miche
- */
+/*
+CREATE TABLE "adquirirservicio" (
+	adq_codigo serial PRIMARY KEY not null,
+	adq_codcli int,
+	adq_codins int,
+	adq_codnut int,
+	adq_codser int,
+	adq_fechainicio date,
+	adq_mesesins int,
+	adq_mesesnut int,
+	adq_mesesser int,
+	adq_costototal double precision,
+    adq_estado character varying(1),
+	
+	FOREIGN KEY(adq_codcli) REFERENCES "cliente" ("cli_codigo") ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY(adq_codins) REFERENCES "instructor" ("ins_codigo") ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY(adq_codnut) REFERENCES "nutricionista" ("nut_codigo") ON UPDATE NO ACTION ON DELETE NO ACTION,
+	FOREIGN KEY(adq_codser) REFERENCES "servicio" ("ser_codigo") ON UPDATE NO ACTION ON DELETE NO ACTION
+);
+*/
 public class ControladorAdmin {
 
     ModeloAdministrador modelo;
@@ -32,10 +47,12 @@ public class ControladorAdmin {
         this.vista = vista;
         vista.setVisible(true);
         vista.setSize(p.getEscritorioPrincipal().getWidth(), p.getEscritorioPrincipal().getHeight());
-        cargarTablaDeAdministrador();
+
     }
 
     public void iniciarControl() {
+        cargarTablaDeAdministrador();
+
         vista.getBtnAgregar().addActionListener(l -> abrirjDlgAdmin());
         vista.getBtnGuardar().addActionListener(l -> crearModificarAdmin());
         vista.getBtnActualizar().addActionListener(l -> cargarTablaDeAdministrador());
