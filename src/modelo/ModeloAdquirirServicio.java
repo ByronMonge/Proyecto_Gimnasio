@@ -25,6 +25,18 @@ public class ModeloAdquirirServicio extends AdquirirServicio {
         return conpg.accion(sql);
     }
 
+    public boolean modificarAdquirirServicio() {
+        String sql = "UPDATE adquirirservicio SET adq_codins = " + getAdq_codins() + ", adq_codnut = " + getAdq_codnut() + ", adq_codser = " + getAdq_codser() + ", adq_fechainicio = '" + getAdq_fechainicio() + "', adq_mesesins =  " + getAdq_mesesins() + ",adq_mesesnut = " + getAdq_mesesnut() + ", adq_mesesser = " + getAdq_mesesser() + ", adq_costototal = " + getAdq_costototal() + " WHERE adq_codigo = " + getAdq_codigo() + ";";
+
+        return conpg.accion(sql);
+    }
+
+    public boolean eliminarAdquirirServicio(int codigoAdquirServicio) {
+        String sql = "UPDATE adquirirservicio SET adq_estado = 'I' where adq_codigo = " + codigoAdquirServicio + ";";
+
+        return conpg.accion(sql);
+    }
+
     public List<AdquirirServicio> listaAdquirirServicioTabla() {
         try {
 
