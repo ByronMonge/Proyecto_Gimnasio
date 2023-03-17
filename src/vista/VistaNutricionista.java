@@ -185,14 +185,15 @@ public class VistaNutricionista extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         spinnerSalario = new javax.swing.JSpinner();
         jPanel1 = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         txtBuscar = new javax.swing.JTextField();
         btnCrear = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblNutricionista = new javax.swing.JTable();
 
@@ -273,26 +274,37 @@ public class VistaNutricionista extends javax.swing.JInternalFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(209, 232, 230));
 
-        jLabel16.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(51, 102, 255));
-        jLabel16.setText("REGISTRO NUTRICIONISTA");
-
-        jLabel13.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel13.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(51, 102, 255));
-        jLabel13.setText("GIMNASIO ONE- PIECE");
-
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jLabel1.setText("Buscar:");
 
+        btnCrear.setBackground(new java.awt.Color(255, 255, 204));
+        btnCrear.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnCrear.setText("Guardar");
 
+        btnModificar.setBackground(new java.awt.Color(255, 255, 204));
+        btnModificar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnModificar.setText("Modificar");
 
+        btnActualizar.setBackground(new java.awt.Color(255, 255, 204));
+        btnActualizar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnActualizar.setText("Actualizar");
 
+        btnEliminar.setBackground(new java.awt.Color(255, 255, 204));
+        btnEliminar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         btnEliminar.setText("Eliminar");
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LOGO.jpg"))); // NOI18N
+
+        jLabel13.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel13.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 51, 153));
+        jLabel13.setText("GIMNASIO ONE- PIECE");
+
+        jLabel16.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 51, 153));
+        jLabel16.setText("REGISTRO NUTRICIONISTA");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -303,41 +315,48 @@ public class VistaNutricionista extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel16)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 369, Short.MAX_VALUE)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(248, 248, 248)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnCrear)
                         .addGap(44, 44, 44)
                         .addComponent(btnModificar)
                         .addGap(36, 36, 36)
                         .addComponent(btnActualizar)
                         .addGap(39, 39, 39)
-                        .addComponent(btnEliminar)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(btnEliminar)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(jLabel13))
-                .addGap(26, 26, 26)
+                .addGap(6, 6, 6)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel13)
+                        .addComponent(jLabel10))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jLabel16)))
+                .addGap(38, 38, 38)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
-                    .addComponent(btnCrear)
-                    .addComponent(btnModificar)
-                    .addComponent(btnActualizar)
-                    .addComponent(btnEliminar))
-                .addContainerGap(26, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnCrear)
+                        .addComponent(btnModificar)
+                        .addComponent(btnActualizar)
+                        .addComponent(btnEliminar)))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
+        tblNutricionista.setBackground(new java.awt.Color(232, 242, 185));
         tblNutricionista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -363,7 +382,7 @@ public class VistaNutricionista extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE))
         );
 
         pack();
@@ -380,6 +399,7 @@ public class VistaNutricionista extends javax.swing.JInternalFrame {
     private com.toedter.calendar.JDateChooser fechaDeNacimiento;
     private javax.swing.JDialog jDlgNutricionista;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
