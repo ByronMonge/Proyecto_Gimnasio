@@ -41,7 +41,7 @@ public class ControladorCliente {
     public void abrirjDlgCliente() {
 
         vista.getjDlgCliente().setVisible(true);
-        vista.getjDlgCliente().setSize(940, 528);
+        vista.getjDlgCliente().setSize(940, 580);
         vista.getjDlgCliente().setLocationRelativeTo(null);
         vista.getjDlgCliente().setName("Crear nuevo Cliente");
         vista.getjDlgCliente().setTitle("Crear nuevo Cliente");
@@ -157,7 +157,7 @@ public class ControladorCliente {
             //Abrir jDialog de campos de Docente
             vista.getjDlgCliente().setVisible(true);
             vista.getjDlgCliente().setName("Modificar Cliente");
-            vista.getjDlgCliente().setSize(940, 528);
+            vista.getjDlgCliente().setSize(940, 580);
             vista.getjDlgCliente().setLocationRelativeTo(null);
             vista.getjDlgCliente().setTitle("Modificar cliente");
             bloquearCampos();
