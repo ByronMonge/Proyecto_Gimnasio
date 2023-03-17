@@ -93,6 +93,7 @@ public class ControladorNutricionista {
                     modelo.setNutri_codper(persona.traerCodigoDePersonaCreada());
                     if (modelo.crearNutricionista()) {
                         JOptionPane.showMessageDialog(null, "Se creo exitosamente");
+                        vista.getjDlgNutricionista().dispose();
                     } else {
                         JOptionPane.showMessageDialog(null, "No se pudo registrar");
                         persona.eliminarPersonaNoCreada(vista.getTxtCedula().getText());

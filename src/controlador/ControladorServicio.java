@@ -10,12 +10,14 @@ import javax.swing.table.TableRowSorter;
 import modelo.Instructor;
 import modelo.ModeloServicio;
 import modelo.Servicio;
+import vista.VistaPrincipal;
 import vista.VistaServicio;
 
 public class ControladorServicio {
 
     ModeloServicio modelo;
     VistaServicio vista;
+     VistaPrincipal p = new VistaPrincipal();
 
     static boolean nombreRepetido;
 
@@ -23,6 +25,7 @@ public class ControladorServicio {
         this.modelo = modelo;
         this.vista = vista;
         vista.setVisible(true);
+        vista.setSize(p.getEscritorioPrincipal().getWidth(), p.getEscritorioPrincipal().getHeight());
         cargarTablaDeServicios();
     }
 
