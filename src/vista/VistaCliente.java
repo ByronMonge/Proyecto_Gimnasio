@@ -157,7 +157,6 @@ public class VistaCliente extends javax.swing.JInternalFrame {
 
         jDlgCliente = new javax.swing.JDialog();
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txtCedula = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -175,6 +174,9 @@ public class VistaCliente extends javax.swing.JInternalFrame {
         btnCancelar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         comboMembresia = new javax.swing.JComboBox<>();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         txtBuscar = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -191,70 +193,99 @@ public class VistaCliente extends javax.swing.JInternalFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Registrar cliente");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 880, -1));
-
         jLabel4.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel4.setText("Cedula:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 76, -1, -1));
-        jPanel2.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 76, 191, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
+        jPanel2.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 191, -1));
 
         jLabel6.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel6.setText("Nombre:");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
-        jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 116, 191, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, -1, -1));
+        jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 191, -1));
 
         jLabel12.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel12.setText("Apellido:");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
-        jPanel2.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 166, 191, -1));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, -1, -1));
+        jPanel2.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 191, -1));
 
         jLabel8.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel8.setText("Fecha Nacimiento:");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 226, -1, -1));
-        jPanel2.add(fechaDeNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 226, 191, -1));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, -1, -1));
+        jPanel2.add(fechaDeNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 191, -1));
 
         jLabel11.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel11.setText("Teléfono:");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 286, -1, -1));
-        jPanel2.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 286, 191, -1));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, -1, -1));
+        jPanel2.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, 191, -1));
 
         jLabel9.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel9.setText("Dirección:");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 344, -1, -1));
-        jPanel2.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 346, 191, -1));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, -1, -1));
+        jPanel2.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 380, 191, -1));
 
         jLabel7.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel7.setText("Tipo de membresia:");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 70, -1, -1));
-        jPanel2.add(txtCodigoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 70, 45, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, -1, -1));
+        jPanel2.add(txtCodigoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 110, 45, -1));
 
-        btnCancelar.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        btnCancelar.setBackground(new java.awt.Color(153, 255, 255));
+        btnCancelar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cancelar.png"))); // NOI18N
         btnCancelar.setText("Cancelar");
-        jPanel2.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(562, 416, -1, -1));
+        jPanel2.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 440, 130, 60));
 
-        btnGuardar.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        btnGuardar.setBackground(new java.awt.Color(153, 255, 255));
+        btnGuardar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/aceptar.png"))); // NOI18N
         btnGuardar.setText("Guardar");
-        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(322, 416, -1, -1));
+        jPanel2.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 140, 60));
 
         comboMembresia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Normal", "VIP", "Premium" }));
-        jPanel2.add(comboMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 70, 140, -1));
+        jPanel2.add(comboMembresia, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 110, 140, -1));
+
+        jPanel4.setBackground(new java.awt.Color(153, 255, 255));
+
+        jLabel3.setFont(new java.awt.Font("Roboto Medium", 1, 25)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Registrar cliente");
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LOGO.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addGap(273, 273, 273)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(354, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(14, 14, 14))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 70));
 
         javax.swing.GroupLayout jDlgClienteLayout = new javax.swing.GroupLayout(jDlgCliente.getContentPane());
         jDlgCliente.getContentPane().setLayout(jDlgClienteLayout);
         jDlgClienteLayout.setHorizontalGroup(
             jDlgClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDlgClienteLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 914, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jDlgClienteLayout.setVerticalGroup(
             jDlgClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDlgClienteLayout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 528, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -393,6 +424,7 @@ public class VistaCliente extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -400,6 +432,7 @@ public class VistaCliente extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblCliente;
     private javax.swing.JTextField txtApellido;
