@@ -74,7 +74,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(106, 153, 238));
+        jPanel1.setBackground(new java.awt.Color(129, 170, 245));
 
         btnInstructor.setFont(new java.awt.Font("Yu Gothic UI", 0, 15)); // NOI18N
         btnInstructor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/instructor.png"))); // NOI18N
