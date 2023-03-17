@@ -14,11 +14,12 @@ public class AdquirirServicio {
     private int adq_mesesnut;
     private int adq_mesesser;
     private double adq_costototal;
+    private String adq_estado;
 
     public AdquirirServicio() {
     }
 
-    public AdquirirServicio(int adq_codigo, int adq_codcli, int adq_codins, int adq_codnut, int adq_codser, Date adq_fechainicio, int adq_mesesins, int adq_mesesnut, int adq_mesesser, double adq_costototal) {
+    public AdquirirServicio(int adq_codigo, int adq_codcli, int adq_codins, int adq_codnut, int adq_codser, Date adq_fechainicio, int adq_mesesins, int adq_mesesnut, int adq_mesesser, double adq_costototal, String adq_estado) {
         this.adq_codigo = adq_codigo;
         this.adq_codcli = adq_codcli;
         this.adq_codins = adq_codins;
@@ -29,6 +30,7 @@ public class AdquirirServicio {
         this.adq_mesesnut = adq_mesesnut;
         this.adq_mesesser = adq_mesesser;
         this.adq_costototal = adq_costototal;
+        this.adq_estado = adq_estado;
     }
 
     public int getAdq_codigo() {
@@ -109,6 +111,14 @@ public class AdquirirServicio {
 
     public void setAdq_costototal(double adq_costototal) {
         this.adq_costototal = adq_costototal;
+    }
+
+    public String getAdq_estado() {
+        return adq_estado;
+    }
+
+    public void setAdq_estado(String adq_estado) {
+        this.adq_estado = adq_estado;
     }
 
 }
