@@ -5,7 +5,7 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class VistaLogin extends javax.swing.JInternalFrame {
+public class VistaLogin extends javax.swing.JFrame {
 
     public VistaLogin() {
         initComponents();
@@ -51,27 +51,6 @@ public class VistaLogin extends javax.swing.JInternalFrame {
         this.txtusuario = txtusuario;
     }
 
-    /*
-    CREATE TABLE "adquirirservicio" (
-	adq_codigo serial PRIMARY KEY not null,
-	adq_codcli int,
-	adq_codins int,
-	adq_codnut int,
-	adq_codser int,
-	adq_fechainicio date,
-	adq_mesesins int,
-	adq_mesesnut int,
-	adq_mesesser int,
-	adq_costototal double precision,
-    adq_estado character varying(1),
-	
-	FOREIGN KEY(adq_codcli) REFERENCES "cliente" ("cli_codigo") ON UPDATE NO ACTION ON DELETE NO ACTION,
-	FOREIGN KEY(adq_codins) REFERENCES "instructor" ("ins_codigo") ON UPDATE NO ACTION ON DELETE NO ACTION,
-	FOREIGN KEY(adq_codnut) REFERENCES "nutricionista" ("nut_codigo") ON UPDATE NO ACTION ON DELETE NO ACTION,
-	FOREIGN KEY(adq_codser) REFERENCES "servicio" ("ser_codigo") ON UPDATE NO ACTION ON DELETE NO ACTION
-);
-    
-     */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

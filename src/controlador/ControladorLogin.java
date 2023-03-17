@@ -9,21 +9,20 @@ import modelo.ModeloAdministrador;
 import vista.VistaLogin;
 import vista.VistaPrincipal;
 
-/**
- *
- * @author miche
- */
 public class ControladorLogin {
+
+
     VistaLogin vista;
-    
+
     static boolean encontrar;
     static String usuario;
 
     public ControladorLogin(VistaLogin vista) {
         this.vista = vista;
         vista.setVisible(true);
+        vista.setLocationRelativeTo(null);
     }
-    
+
     public void iniciarControl() {
         vista.getBtniniciar().addActionListener(l -> login());
         vista.getTxtcontrasenia().setText("");
@@ -38,7 +37,6 @@ public class ControladorLogin {
 
         ModeloAdministrador admin = new ModeloAdministrador();
         List<Administrador> listAdmin = admin.listaAdminTabla();
-  
 
         listAdmin.stream().forEach(a -> {
 
@@ -50,8 +48,6 @@ public class ControladorLogin {
                 ControladorPrincipal control = new ControladorPrincipal(vistaPrincipal);
                 control.iniciarControl();
 
-                usuario = vista.getTxtusuario().getText();//Guardo el usuario para luego usarlo en la matricula
-                System.out.println("Usuario login: " + usuario);
             }
         });
 
@@ -124,7 +120,5 @@ public class ControladorLogin {
 
         vista.getLbocultar().addMouseListener(evento);
     }
-    
 
-    
 }
