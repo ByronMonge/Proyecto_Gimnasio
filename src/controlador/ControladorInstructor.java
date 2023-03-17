@@ -37,7 +37,7 @@ public class ControladorInstructor {
         vista.getBtnModificar().addActionListener(l -> cargarDatosInstructoresEnTXT());
         vista.getBtnEliminar().addActionListener(l -> eliminarInstructor());
         vista.getBtnCancelar().addActionListener(l -> cancelar());
-        
+
         buscarRegistros();
     }
 
@@ -51,7 +51,7 @@ public class ControladorInstructor {
 
         //Quitar visibilidad del codigo del instructor
         vista.getTxtCodigoInstructor().setVisible(false);
-
+        desbloquearCampos();
         LimpiarTablas();
     }
 
@@ -61,9 +61,19 @@ public class ControladorInstructor {
 
         List<Instructor> instructores = modelo.listaInstructoresTabla();
         instructores.stream().forEach(i -> {
-            String[] datos = {String.valueOf(i.getIns_codigo()), i.getPer_cedula(), i.getPer_nombre(), i.getPer_apellido(), i.getIns_areatrabajo(), i.getIns_horario(),String.valueOf(i.getIns_suedo())};
+            String[] datos = {String.valueOf(i.getIns_codigo()), i.getPer_cedula(), i.getPer_nombre(), i.getPer_apellido(), i.getIns_areatrabajo(), i.getIns_horario(), String.valueOf(i.getIns_suedo())};
             tabla.addRow(datos);
         });
+    }
+
+    public void bloquearCampos() {
+        vista.getTxtCedula().setEditable(false);
+        vista.getTxtCodigoInstructor().setVisible(false);
+    }
+
+    public void desbloquearCampos() {
+        vista.getTxtCedula().setEditable(true);
+        vista.getTxtCodigoInstructor().setVisible(false);
     }
 
     public void crearModificarInstructor() {
@@ -188,6 +198,7 @@ public class ControladorInstructor {
             vista.getjDlgInstructor().setSize(889, 495);
             vista.getjDlgInstructor().setLocationRelativeTo(null);
             vista.getjDlgInstructor().setTitle("Modificar instructor");
+            bloquearCampos();
 
             //Quitar visibilidad
             vista.getTxtCodigoInstructor().setVisible(false);
@@ -305,7 +316,7 @@ public class ControladorInstructor {
         vista.getVespertino().setSelected(false);
         vista.getNocturno().setSelected(false);
     }
-    
+
     public void cancelar() {
         vista.getjDlgInstructor().setVisible(false);
     }
