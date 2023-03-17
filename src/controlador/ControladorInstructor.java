@@ -3,7 +3,9 @@ package controlador;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
@@ -34,6 +36,8 @@ public class ControladorInstructor {
         vista.getBtnActualizar().addActionListener(l -> cargarTablaDeInstructores());
         vista.getBtnModificar().addActionListener(l -> cargarDatosInstructoresEnTXT());
         vista.getBtnEliminar().addActionListener(l -> eliminarInstructor());
+        vista.getBtnCancelar().addActionListener(l -> cancelar());
+        
         buscarRegistros();
     }
 
@@ -48,6 +52,7 @@ public class ControladorInstructor {
         //Quitar visibilidad del codigo del instructor
         vista.getTxtCodigoInstructor().setVisible(false);
 
+        LimpiarTablas();
     }
 
     public void cargarTablaDeInstructores() {
@@ -56,7 +61,7 @@ public class ControladorInstructor {
 
         List<Instructor> instructores = modelo.listaInstructoresTabla();
         instructores.stream().forEach(i -> {
-            String[] datos = {String.valueOf(i.getIns_codigo()), i.getPer_cedula(), i.getPer_nombre(), i.getPer_apellido(), i.getIns_areatrabajo(), i.getIns_horario()};
+            String[] datos = {String.valueOf(i.getIns_codigo()), i.getPer_cedula(), i.getPer_nombre(), i.getPer_apellido(), i.getIns_areatrabajo(), i.getIns_horario(),String.valueOf(i.getIns_suedo())};
             tabla.addRow(datos);
         });
     }
@@ -83,6 +88,7 @@ public class ControladorInstructor {
 
                 //Setear datos de instructor
                 modelo.setIns_areatrabajo(vista.getTxtAreaTrabajo().getText());
+                modelo.setIns_suedo(Double.parseDouble(vista.getSpinnSueldo().getValue().toString()));
 
                 String horario = "";
                 if (vista.getMatutino().isSelected()) {
@@ -110,7 +116,7 @@ public class ControladorInstructor {
                         persona.eliminarPersonaNoCreada(vista.getTxtCedula().getText());
                     }
                 } else {
-                    System.out.println("Error: No se registrar la persona");
+                    System.out.println("Error: No se registro la persona");
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "El numero de cedula ya se encuentra registrado en la base de datos");
@@ -148,6 +154,7 @@ public class ControladorInstructor {
             }
 
             modelo.setIns_horario(horario);
+            modelo.setIns_suedo(Double.parseDouble(vista.getSpinnSueldo().getValue().toString()));
 
             if (persona.modificarPersona()) {
                 //Seteo el codigo del instructor tomado del txt
@@ -203,6 +210,7 @@ public class ControladorInstructor {
                     //Cargar datos de instructor
                     vista.getTxtCodigoInstructor().setText(String.valueOf(instructor.getIns_codigo()));
                     vista.getTxtAreaTrabajo().setText(instructor.getIns_areatrabajo());
+                    vista.getSpinnSueldo().setValue(instructor.getIns_suedo());
 
                     if (instructor.getIns_horario().equals("Matutino")) {
                         vista.getMatutino().setSelected(true);
@@ -283,5 +291,22 @@ public class ControladorInstructor {
         };
 
         vista.getTxtBuscar().addKeyListener(eventoTeclado); //"addKeyListener" es un metodo que se le tiene que pasar como argumento un objeto de tipo keyListener 
+    }
+
+    public void LimpiarTablas() {
+        vista.getTxtCedula().setText("");
+        vista.getTxtNombre().setText(" ");
+        vista.getTxtApellido().setText(" ");
+        vista.getTxtDireccion().setText(" ");
+        vista.getTxtTelefono().setText(" ");
+        vista.getTxtAreaTrabajo().setText(" ");
+        vista.getFechaDeNacimiento().setDate(null);
+        vista.getMatutino().setSelected(false);
+        vista.getVespertino().setSelected(false);
+        vista.getNocturno().setSelected(false);
+    }
+    
+    public void cancelar() {
+        vista.getjDlgInstructor().setVisible(false);
     }
 }
