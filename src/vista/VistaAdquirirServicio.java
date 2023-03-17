@@ -405,6 +405,14 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
         this.btnGuardar = btnGuardar;
     }
 
+    public JTextField getTxtCodigoAdquirirServicio() {
+        return txtCodigoAdquirirServicio;
+    }
+
+    public void setTxtCodigoAdquirirServicio(JTextField txtCodigoAdquirirServicio) {
+        this.txtCodigoAdquirirServicio = txtCodigoAdquirirServicio;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -457,6 +465,7 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
         spinnerCostoSer = new javax.swing.JSpinner();
         btnGuardar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        txtCodigoAdquirirServicio = new javax.swing.JTextField();
         jDlgBuscarCliente = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
@@ -584,7 +593,10 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtCodigoAdquirirServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -685,11 +697,13 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addGap(20, 20, 20)
+                .addGap(17, 17, 17)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(37, 37, 37)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(txtCodigoAdquirirServicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(35, 35, 35)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtCedulaCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4)
@@ -768,7 +782,7 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
                     .addComponent(jLabel19)
                     .addComponent(spinnerMesesNut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCalcular)
                     .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -991,7 +1005,7 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 286, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 343, Short.MAX_VALUE)
                         .addComponent(btnCrear)
                         .addGap(29, 29, 29)
                         .addComponent(btnModificar)
@@ -1027,7 +1041,7 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Código", "Cédula del cliente", "Nombre y apellido del cliente", "Nombre y apellido del instructor", "Nombre y apellido del nutricionista", "Servicio", "Costo total"
+                "Código", "Cédula", "Cliente", "Instructor", "Nutricionista", "Servicio", "Costo total"
             }
         ));
         jScrollPane1.setViewportView(tblAdquirirServicio);
@@ -1044,7 +1058,7 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE))
         );
 
         pack();
@@ -1130,6 +1144,7 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtCedulaCli;
     private javax.swing.JTextField txtCedulaIns;
     private javax.swing.JTextField txtCedulaNut;
+    private javax.swing.JTextField txtCodigoAdquirirServicio;
     private javax.swing.JTextField txtCodigoCliente;
     private javax.swing.JTextField txtCodigoInstructor;
     private javax.swing.JTextField txtCodigoNutricionista;
