@@ -1,9 +1,12 @@
 package controlador;
 
+import modelo.ModeloAdministrador;
+import modelo.ModeloAdquirirServicio;
 import modelo.ModeloCliente;
 import modelo.ModeloInstructor;
 import modelo.ModeloNutricionista;
 import modelo.ModeloServicio;
+import vista.VistaAdquirirServicio;
 import vista.VistaCliente;
 import vista.VistaInstructor;
 import vista.VistaNutricionista;
@@ -24,6 +27,7 @@ public class ControladorPrincipal {
         vistaPrincipal.getBtnNutricionista().addActionListener(l -> crudNutricionista());
         vistaPrincipal.getBtnCliente().addActionListener(l -> crudCliente());
         vistaPrincipal.getBtnServicio().addActionListener(l -> crudServicio());
+        vistaPrincipal.getBtnAdquirirServicio().addActionListener(l -> crudAdquirirServicio());
     }
     
     public void crudInstructor() {
@@ -71,6 +75,18 @@ public class ControladorPrincipal {
         vistaPrincipal.getEscritorioPrincipal().add(vista);
         
         ControladorServicio control = new ControladorServicio(modelo, vista);
+        control.iniciarControl();//Empezamos las escuchas a los eventos de la vista, Listeners.
+    }
+    
+    public void crudAdquirirServicio() {
+        //Instancio las clases del Modelo y la Vista.
+        VistaAdquirirServicio vista = new VistaAdquirirServicio();
+        ModeloAdquirirServicio modelo = new ModeloAdquirirServicio();
+
+        //Agregar Vista Personas al Desktop Pane.
+        vistaPrincipal.getEscritorioPrincipal().add(vista);
+        
+        ControladorAdquirirServicio control = new ControladorAdquirirServicio(modelo, vista);
         control.iniciarControl();//Empezamos las escuchas a los eventos de la vista, Listeners.
     }
 }

@@ -48,17 +48,20 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="btnNutricionista" max="32767" attributes="0"/>
-                      <Component id="btnInstructor" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btnCliente" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btnServicio" alignment="0" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="btnAdquirirServicio" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnNutricionista" max="32767" attributes="0"/>
+                          <Component id="btnInstructor" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnCliente" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnServicio" alignment="0" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
-              <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -66,7 +69,9 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="31" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                  <Component id="btnAdquirirServicio" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="79" max="32767" attributes="0"/>
                   <Component id="btnInstructor" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnNutricionista" min="-2" max="-2" attributes="0"/>
@@ -118,6 +123,11 @@
               <Image iconType="3" name="/imagenes/hat.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="GIMNASIO ONE PIECE"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnAdquirirServicio">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Adquirir servicio"/>
           </Properties>
         </Component>
       </SubComponents>
