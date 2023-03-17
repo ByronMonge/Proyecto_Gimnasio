@@ -2,12 +2,14 @@ package controlador;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import javax.xml.ws.Holder;
+import modelo.AdquirirServicio;
 import modelo.Cliente;
 import modelo.Instructor;
 import modelo.ModeloAdquirirServicio;
@@ -24,6 +26,8 @@ public class ControladorAdquirirServicio {
     ModeloAdquirirServicio modelo;
     VistaAdquirirServicio vista;
 
+    static boolean encontrar;
+
     public ControladorAdquirirServicio(ModeloAdquirirServicio modelo, VistaAdquirirServicio vista) {
         this.modelo = modelo;
         this.vista = vista;
@@ -34,6 +38,7 @@ public class ControladorAdquirirServicio {
         //AdquirirServicio
         vista.getBtnCrear().addActionListener(l -> abrirjDialogAdquirirServicio());
         vista.getBtnCalcular().addActionListener(l -> calcularTotal());
+        vista.getBtnGuardar().addActionListener(l-> crearModificarAdquirirServicio());
 
         //Cliente
         vista.getBtnBuscarCli().addActionListener(l -> abrirjDialogCliente());
@@ -56,7 +61,8 @@ public class ControladorAdquirirServicio {
         vista.getjDlgAdquirirServicio().setVisible(true);
         vista.getjDlgAdquirirServicio().setSize(885, 638);
         vista.getjDlgAdquirirServicio().setLocationRelativeTo(null);
-        vista.getjDlgAdquirirServicio().setTitle("Seleccionar curso");
+        vista.getjDlgAdquirirServicio().setName("Adquirir servicio");
+        vista.getjDlgAdquirirServicio().setTitle("Adquirir servicio");
 
         //Quito la visibilidad del txt del codigo del curso
         vista.getTxtCodigoCliente().setVisible(false);
@@ -68,7 +74,80 @@ public class ControladorAdquirirServicio {
         //buscarCurso();
     }
 
-    
+    public void cargarTablaDeAdquirirServicio() {
+        DefaultTableModel tabla = (DefaultTableModel) vista.getTblAdquirirServicio().getModel();
+        tabla.setNumRows(0);
+
+        ModeloCliente cliente = new ModeloCliente();
+        ModeloInstructor instructor = new ModeloInstructor();
+        ModeloNutricionista nutricionista = new ModeloNutricionista();
+        ModeloServicio servicio = new ModeloServicio();
+
+        List<AdquirirServicio> adquirir = modelo.listaAdquirirServicioTabla();
+        List<Cliente> clientes = cliente.listaClientesTabla();
+        List<Instructor> instructores = instructor.listaInstructoresTabla();
+        List<Nutricionista> nutricionistas = nutricionista.listaNutricionistaTabla();
+
+        adquirir.stream().forEach(a -> {
+
+            clientes.stream().forEach(c -> {
+                if (a.getAdq_codcli() == c.getCliente_codigo()) {
+
+                    instructores.stream().forEach(i -> {
+
+                        if (a.getAdq_codins() == i.getIns_codigo()) {
+
+                            Object[] datos = {a.getAdq_codigo(), c.getPer_cedula(), c.getPer_nombre() + " " + c.getPer_apellido(), i.getPer_nombre() + " " + i.getPer_apellido()};
+                            tabla.addRow(datos);
+                        }
+                    });
+                }
+            });
+        });
+    }
+
+    public void crearModificarAdquirirServicio() {
+
+        if (vista.getjDlgAdquirirServicio().getName().equals("Adquirir servicio")) {
+
+            encontrar = false;
+
+            List<AdquirirServicio> adquirir = modelo.listaAdquirirServicioTabla();
+
+            adquirir.stream().forEach(a -> {
+
+                if (a.getAdq_codcli() == Integer.parseInt(vista.getTxtCodigoCliente().getText())) {
+                    encontrar = true;
+                }
+            });
+
+            if (encontrar) {
+                JOptionPane.showMessageDialog(null, "Solo puede adquirir un servicio");
+            } else {
+                modelo.setAdq_codcli(Integer.parseInt(vista.getTxtCodigoCliente().getText()));
+                modelo.setAdq_codins(Integer.parseInt(vista.getTxtCodigoInstructor().getText()));
+                modelo.setAdq_codnut(Integer.parseInt(vista.getTxtCodigoNutricionista().getText()));
+                modelo.setAdq_codser(Integer.parseInt(vista.getTxtCodigoServicio().getText()));
+
+                modelo.setAdq_mesesins(Integer.parseInt(vista.getSpinnerMesesIns().getValue().toString()));
+                modelo.setAdq_mesesnut(Integer.parseInt(vista.getSpinnerMesesNut().getValue().toString()));
+                modelo.setAdq_mesesser(Integer.parseInt(vista.getSpinnerMesesSer().getValue().toString()));
+
+                Date fecha = vista.getFechaInicio().getDate();
+                java.sql.Date fechaSQL = new java.sql.Date(fecha.getTime());
+                modelo.setAdq_fechainicio(fechaSQL);
+
+                modelo.setAdq_costototal(Double.parseDouble(vista.getTxtTotal().getText()));
+
+                if (modelo.crearAdquirirServicio()) {
+                    JOptionPane.showMessageDialog(null, "Adquirio el servicio satisfactoriamente");
+                } else {
+                    JOptionPane.showMessageDialog(null, "No se pudo adquirir el servicio");
+                }
+            }
+        }
+    }
+
     //Todo sobre el registro de clientes en el jDialog
     public void abrirjDialogCliente() {
         vista.getjDlgBuscarCliente().setVisible(true);
