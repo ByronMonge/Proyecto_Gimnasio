@@ -1,5 +1,6 @@
 package vista;
 
+import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JSpinner;
@@ -148,14 +149,6 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
         this.jDlgBuscarServicio = jDlgBuscarServicio;
     }
 
-    public JSpinner getSpinnerMeses2() {
-        return spinnerMeses2;
-    }
-
-    public void setSpinnerMeses2(JSpinner spinnerMeses2) {
-        this.spinnerMeses2 = spinnerMeses2;
-    }
-
     public JSpinner getSpinnerMesesIns() {
         return spinnerMesesIns;
     }
@@ -276,14 +269,6 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
         this.txtCodigoInstructor = txtCodigoInstructor;
     }
 
-    public JTextField getTxtCodigoInstructor1() {
-        return txtCodigoNutricionista;
-    }
-
-    public void setTxtCodigoInstructor1(JTextField txtCodigoInstructor1) {
-        this.txtCodigoNutricionista = txtCodigoInstructor1;
-    }
-
     public JTextField getTxtNombreCli() {
         return txtNombreCli;
     }
@@ -314,30 +299,6 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
 
     public void setTxtNombreSer(JTextField txtNombreSer) {
         this.txtNombreSer = txtNombreSer;
-    }
-
-    public JTextField getTxtSueldoIns() {
-        return txtSueldoIns;
-    }
-
-    public void setTxtSueldoIns(JTextField txtSueldoIns) {
-        this.txtSueldoIns = txtSueldoIns;
-    }
-
-    public JTextField getTxtSueldoNut() {
-        return txtSueldoNut;
-    }
-
-    public void setTxtSueldoNut(JTextField txtSueldoNut) {
-        this.txtSueldoNut = txtSueldoNut;
-    }
-
-    public JTextField getTxtSueldoSer() {
-        return txtSueldoSer;
-    }
-
-    public void setTxtSueldoSer(JTextField txtSueldoSer) {
-        this.txtSueldoSer = txtSueldoSer;
     }
 
     public JTextField getTxtTotal() {
@@ -388,6 +349,46 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
         this.txtBuscarNut = txtBuscarNut;
     }
 
+    public JDateChooser getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public void setFechaInicio(JDateChooser fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public JSpinner getSpinnerMesesSer() {
+        return spinnerMesesSer;
+    }
+
+    public void setSpinnerMesesSer(JSpinner spinnerMesesSer) {
+        this.spinnerMesesSer = spinnerMesesSer;
+    }
+
+    public JSpinner getSpinnerCostoSer() {
+        return spinnerCostoSer;
+    }
+
+    public void setSpinnerCostoSer(JSpinner spinnerCostoSer) {
+        this.spinnerCostoSer = spinnerCostoSer;
+    }
+
+    public JSpinner getSpinnerSueldoIns() {
+        return spinnerSueldoIns;
+    }
+
+    public void setSpinnerSueldoIns(JSpinner spinnerSueldoIns) {
+        this.spinnerSueldoIns = spinnerSueldoIns;
+    }
+
+    public JSpinner getSpinnerSueldoNut() {
+        return spinnerSueldoNut;
+    }
+
+    public void setSpinnerSueldoNut(JSpinner spinnerSueldoNut) {
+        this.spinnerSueldoNut = spinnerSueldoNut;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -410,7 +411,6 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
         jLabel9 = new javax.swing.JLabel();
         txtNombreIns = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        txtSueldoIns = new javax.swing.JTextField();
         txtCodigoCliente = new javax.swing.JTextField();
         txtCodigoInstructor = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
@@ -422,20 +422,23 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         spinnerMesesNut = new javax.swing.JSpinner();
-        txtSueldoNut = new javax.swing.JTextField();
         txtNombreNut = new javax.swing.JTextField();
         txtCedulaNut = new javax.swing.JTextField();
         btnBuscarNut = new javax.swing.JButton();
         txtCodigoNutricionista = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        txtSueldoSer = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
-        spinnerMeses2 = new javax.swing.JSpinner();
+        spinnerMesesSer = new javax.swing.JSpinner();
         btnCalcular = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         txtTotal = new javax.swing.JTextField();
         btnBuscarSer = new javax.swing.JButton();
         txtCodigoServicio = new javax.swing.JTextField();
+        fechaInicio = new com.toedter.calendar.JDateChooser();
+        jLabel27 = new javax.swing.JLabel();
+        spinnerSueldoIns = new javax.swing.JSpinner();
+        spinnerSueldoNut = new javax.swing.JSpinner();
+        spinnerCostoSer = new javax.swing.JSpinner();
         jDlgBuscarCliente = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
@@ -532,7 +535,7 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
         btnBuscarNut.setText("Buscar");
 
         jLabel20.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        jLabel20.setText("Sueldo:");
+        jLabel20.setText("Costo:");
 
         jLabel21.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel21.setText("Meses: ");
@@ -544,6 +547,9 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
 
         btnBuscarSer.setText("Buscar");
 
+        jLabel27.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        jLabel27.setText("Fecha de inicio:");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -554,14 +560,6 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnCalcular)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel22)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -581,23 +579,26 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
                                     .addComponent(txtCodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jLabel11)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel21)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
-                                        .addComponent(spinnerMeses2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
+                                        .addComponent(spinnerMesesSer, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel7)
-                                            .addComponent(jLabel20))
+                                            .addComponent(jLabel20)
+                                            .addComponent(jLabel27))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(fechaInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(txtNombreSer, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
-                                            .addComponent(txtSueldoSer))))
+                                            .addComponent(spinnerCostoSer, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnBuscarSer)
-                                    .addComponent(txtCodigoServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(txtCodigoServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel22))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel14)
@@ -610,19 +611,19 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel17)
                                         .addGap(25, 25, 25)
-                                        .addComponent(txtNombreNut, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(txtNombreNut, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel18)
+                                            .addComponent(jLabel19))
+                                        .addGap(114, 114, 114)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(spinnerMesesNut, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(spinnerSueldoNut, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(btnBuscarNut)
                                     .addComponent(txtCodigoNutricionista, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel18)
-                                    .addComponent(jLabel19))
-                                .addGap(114, 114, 114)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtSueldoNut, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(spinnerMesesNut, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jLabel5)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -644,9 +645,14 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
                                     .addComponent(jLabel12))
                                 .addGap(114, 114, 114)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtSueldoIns, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(spinnerMesesIns, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(118, 118, 118))))
+                                    .addComponent(spinnerMesesIns, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(spinnerSueldoIns, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(118, 118, 118))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnCalcular)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -682,7 +688,7 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
                         .addGap(28, 28, 28)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
-                            .addComponent(txtSueldoIns, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(spinnerSueldoIns, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
@@ -715,36 +721,39 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
                         .addGap(3, 3, 3)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel20)
-                            .addComponent(txtSueldoSer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(spinnerCostoSer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel18)
-                            .addComponent(txtSueldoNut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(spinnerSueldoNut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(9, 9, 9)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel21)
-                            .addComponent(spinnerMeses2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(16, 16, 16)
-                .addComponent(jLabel22)
-                .addGap(18, 18, 18)
+                            .addComponent(spinnerMesesSer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(fechaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel27))
+                .addGap(47, 47, 47)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(spinnerMesesNut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCalcular)
                     .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(1, 1, 1)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19)
-                    .addComponent(spinnerMesesNut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 59, Short.MAX_VALUE))
+                .addGap(26, 26, 26))
         );
 
         javax.swing.GroupLayout jDlgAdquirirServicioLayout = new javax.swing.GroupLayout(jDlgAdquirirServicio.getContentPane());
         jDlgAdquirirServicio.getContentPane().setLayout(jDlgAdquirirServicioLayout);
         jDlgAdquirirServicioLayout.setHorizontalGroup(
             jDlgAdquirirServicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 885, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 885, Short.MAX_VALUE)
         );
         jDlgAdquirirServicioLayout.setVerticalGroup(
             jDlgAdquirirServicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -908,7 +917,7 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
         jDlgBuscarServicio.getContentPane().setLayout(jDlgBuscarServicioLayout);
         jDlgBuscarServicioLayout.setHorizontalGroup(
             jDlgBuscarServicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 664, Short.MAX_VALUE)
         );
         jDlgBuscarServicioLayout.setVerticalGroup(
             jDlgBuscarServicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1026,6 +1035,7 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnCrear;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnModificar;
+    private com.toedter.calendar.JDateChooser fechaInicio;
     private javax.swing.JDialog jDlgAdquirirServicio;
     private javax.swing.JDialog jDlgBuscarCliente;
     private javax.swing.JDialog jDlgBuscarInstructor;
@@ -1050,6 +1060,7 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1068,9 +1079,12 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JSpinner spinnerMeses2;
+    private javax.swing.JSpinner spinnerCostoSer;
     private javax.swing.JSpinner spinnerMesesIns;
     private javax.swing.JSpinner spinnerMesesNut;
+    private javax.swing.JSpinner spinnerMesesSer;
+    private javax.swing.JSpinner spinnerSueldoIns;
+    private javax.swing.JSpinner spinnerSueldoNut;
     private javax.swing.JTable tblAdquirirServicio;
     private javax.swing.JTable tblCli;
     private javax.swing.JTable tblIns;
@@ -1092,9 +1106,6 @@ public class VistaAdquirirServicio extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtNombreIns;
     private javax.swing.JTextField txtNombreNut;
     private javax.swing.JTextField txtNombreSer;
-    private javax.swing.JTextField txtSueldoIns;
-    private javax.swing.JTextField txtSueldoNut;
-    private javax.swing.JTextField txtSueldoSer;
     private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
 }

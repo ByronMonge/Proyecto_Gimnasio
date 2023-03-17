@@ -41,7 +41,7 @@ public class ControladorServicio {
     public void abrirjDlgServicio() {
 
         vista.getjDlgServicio().setVisible(true);
-        vista.getjDlgServicio().setSize(366, 258);
+        vista.getjDlgServicio().setSize(476, 363);
         vista.getjDlgServicio().setLocationRelativeTo(null);
         vista.getjDlgServicio().setName("Crear nuevo servicio");
         vista.getjDlgServicio().setTitle("Crear nuevo servicio");
@@ -86,6 +86,7 @@ public class ControladorServicio {
 
                 if (modelo.crearServicio()) {
                     JOptionPane.showMessageDialog(null, "Servicio registrado satisfactoriamente");
+                    vista.getjDlgServicio().setVisible(false);
                 } else {
                     JOptionPane.showMessageDialog(null, "El servicio no se pudo registrar");
                 }
@@ -111,6 +112,7 @@ public class ControladorServicio {
 
                 if (modelo.modificarServicio()) {
                     JOptionPane.showMessageDialog(null, "Servicio modificado satisfactoriamente");
+                    vista.getjDlgServicio().setVisible(false);
                 } else {
                     JOptionPane.showMessageDialog(null, "El servicio no se pudo modificar");
                 }
@@ -129,7 +131,7 @@ public class ControladorServicio {
 
             vista.getjDlgServicio().setVisible(true);
             vista.getjDlgServicio().setName("Modificar servicio");
-            vista.getjDlgServicio().setSize(366, 258);
+            vista.getjDlgServicio().setSize(476, 363);
             vista.getjDlgServicio().setLocationRelativeTo(null);
             vista.getjDlgServicio().setTitle("Modificar servicio");
 
