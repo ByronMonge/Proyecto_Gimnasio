@@ -12,15 +12,18 @@ import modelo.Cliente;
 import modelo.ModeloCliente;
 import modelo.ModeloPersona;
 import vista.VistaCliente;
+import vista.VistaPrincipal;
 
 public class ControladorCliente {
 
     ModeloCliente modelo;
     VistaCliente vista;
+    VistaPrincipal p = new VistaPrincipal();
 
     public ControladorCliente(ModeloCliente modelo, VistaCliente vista) {
         this.modelo = modelo;
         this.vista = vista;
+        vista.setSize(p.getEscritorioPrincipal().getWidth(), p.getEscritorioPrincipal().getHeight());
         vista.setVisible(true);
     }
 
@@ -38,7 +41,7 @@ public class ControladorCliente {
     public void abrirjDlgCliente() {
 
         vista.getjDlgCliente().setVisible(true);
-        vista.getjDlgCliente().setSize(914, 516);
+        vista.getjDlgCliente().setSize(938, 516);
         vista.getjDlgCliente().setLocationRelativeTo(null);
         vista.getjDlgCliente().setName("Crear nuevo Cliente");
         vista.getjDlgCliente().setTitle("Crear nuevo Cliente");
@@ -154,7 +157,7 @@ public class ControladorCliente {
             //Abrir jDialog de campos de Docente
             vista.getjDlgCliente().setVisible(true);
             vista.getjDlgCliente().setName("Modificar Cliente");
-            vista.getjDlgCliente().setSize(889, 495);
+            vista.getjDlgCliente().setSize(938, 516);
             vista.getjDlgCliente().setLocationRelativeTo(null);
             vista.getjDlgCliente().setTitle("Modificar cliente");
             bloquearCampos();
