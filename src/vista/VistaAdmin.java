@@ -1,25 +1,15 @@
 package vista;
 
 import com.toedter.calendar.JDateChooser;
-import controlador.ControladorAdmin;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-import main.inicio;
-import modelo.ModeloAdministrador;
 
-/**
- *
- * @author miche
- */
-public class VistaAdmin extends javax.swing.JFrame {
+public class VistaAdmin extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form VistaAdmin
-     */
     public VistaAdmin() {
         initComponents();
     }
@@ -144,7 +134,6 @@ public class VistaAdmin extends javax.swing.JFrame {
         this.txtusuario = txtusuaio;
     }
 
-
     public JTextField getTxtBuscar() {
         return txtBuscar;
     }
@@ -185,8 +174,7 @@ public class VistaAdmin extends javax.swing.JFrame {
         this.txtTelefono = txtTelefono;
     }
 
-    
-    
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -417,17 +405,6 @@ public class VistaAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-       
-        VistaAdmin visadm = new VistaAdmin();
-        ModeloAdministrador model = new ModeloAdministrador();
-        ControladorAdmin con = new ControladorAdmin(model, visadm);
-        con.iniciarControl();
-        
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;
