@@ -6,13 +6,22 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
+import modelo.ConexionPG;
 import modelo.Instructor;
 import modelo.ModeloInstructor;
 import modelo.ModeloPersona;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import vista.VistaInstructor;
 import vista.VistaPrincipal;
 
@@ -37,6 +46,7 @@ public class ControladorInstructor {
         vista.getBtnModificar().addActionListener(l -> cargarDatosInstructoresEnTXT());
         vista.getBtnEliminar().addActionListener(l -> eliminarInstructor());
         vista.getBtnCancelar().addActionListener(l -> cancelar());
+        vista.getImprimir().addActionListener(l-> imprimirPersona());
 
         buscarRegistros();
     }
@@ -53,6 +63,32 @@ public class ControladorInstructor {
         vista.getTxtCodigoInstructor().setVisible(false);
         desbloquearCampos();
         LimpiarTablas();
+    }
+public void imprimirPersona() {
+
+            ConexionPG cpg = new ConexionPG();//Instanciar la conexion con esto abrimos la conexion a la BD
+        try {
+            JasperReport jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/Reportes/ReporteInstructor.jasper"));
+
+            //Hacer una vista previa
+            JasperPrint jp = JasperFillManager.fillReport(jr, null, cpg.getCon());//JasperFillManager.fillReport: Carga los datos de la BD.//JasperPrint: Hace la impresion del reporte. Puede ir 'null' si en el jasper no existen parametros caso contrario se envian los parametros necesarios
+            //Map<String, Object> parametros = new HashMap<String, Object>();
+            //vista.getjTextFieldTituloParametro().getText()
+            //Double.parseDouble(vista.getjSpinnerSuledoMaximo().getValue().toString())
+//            Double.parseDouble(vista.getjSpinnerSuldoMinimo().getValue().toString())
+
+//            parametros.put("titulo", "TITULO"); //En donde esta 'titulo' tienen que ser igual al nombre que esta en el parametro del jasper
+//            parametros.put("maximo", Float.parseFloat(vista.getjSpinnerSuledoMaximo().getValue().toString()));
+//            parametros.put("minimo", Float.parseFloat(vista.getjSpinnerSuldoMinimo().getValue().toString()));
+
+            //JasperPrint jp = JasperFillManager.fillReport(jr, parametros, cpg.getCon());//'parametros' es el Map recien creado que contiene los parametros que iran al jasper
+
+            JasperViewer jv = new JasperViewer(jp, false); //Se pasa false para que no se cierre el sistema 
+            jv.setVisible(true);
+
+        } catch (JRException ex) {
+            Logger.getLogger(ControladorInstructor.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public void cargarTablaDeInstructores() {

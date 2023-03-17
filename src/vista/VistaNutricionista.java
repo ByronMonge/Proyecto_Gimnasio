@@ -41,6 +41,15 @@ public class VistaNutricionista extends javax.swing.JInternalFrame {
         return btnEliminar;
     }
 
+    public JButton getImprimir() {
+        return imprimir;
+    }
+
+    public void setImprimir(JButton imprimir) {
+        this.imprimir = imprimir;
+    }
+    
+
     public void setBtnEliminar(JButton btnEliminar) {
         this.btnEliminar = btnEliminar;
     }
@@ -196,6 +205,7 @@ public class VistaNutricionista extends javax.swing.JInternalFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        imprimir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblNutricionista = new javax.swing.JTable();
 
@@ -342,6 +352,10 @@ public class VistaNutricionista extends javax.swing.JInternalFrame {
         jLabel16.setForeground(new java.awt.Color(0, 51, 153));
         jLabel16.setText("REGISTRO NUTRICIONISTA");
 
+        imprimir.setBackground(new java.awt.Color(255, 255, 204));
+        imprimir.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        imprimir.setText("Imprimir");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -353,7 +367,7 @@ public class VistaNutricionista extends javax.swing.JInternalFrame {
                         .addComponent(jLabel16)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 369, Short.MAX_VALUE)
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -363,8 +377,11 @@ public class VistaNutricionista extends javax.swing.JInternalFrame {
                         .addComponent(btnModificar)
                         .addGap(36, 36, 36)
                         .addComponent(btnActualizar)
-                        .addGap(39, 39, 39)
-                        .addComponent(btnEliminar)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(imprimir)
+                            .addComponent(btnEliminar))
+                        .addGap(21, 21, 21)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
                 .addContainerGap())
@@ -380,7 +397,9 @@ public class VistaNutricionista extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addComponent(jLabel16)))
-                .addGap(38, 38, 38)
+                .addGap(8, 8, 8)
+                .addComponent(imprimir)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnCrear)
@@ -438,6 +457,7 @@ public class VistaNutricionista extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnModificar;
     private com.toedter.calendar.JDateChooser fechaDeNacimiento;
+    private javax.swing.JButton imprimir;
     private javax.swing.JDialog jDlgNutricionista;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
