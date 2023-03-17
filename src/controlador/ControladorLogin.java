@@ -6,27 +6,24 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import modelo.Administrador;
 import modelo.ModeloAdministrador;
-import vista.Login;
+import vista.VistaLogin;
 import vista.VistaPrincipal;
 
-/**
- *
- * @author miche
- */
 public class ControladorLogin {
-    Login vista;
-    
+
+    VistaLogin vista;
+
     static boolean encontrar;
     static String usuario;
 
-    public ControladorLogin(Login vista) {
+    public ControladorLogin(VistaLogin vista) {
         this.vista = vista;
         vista.setVisible(true);
+        vista.setLocationRelativeTo(null);
     }
-    
+
     public void iniciarControl() {
         vista.getBtniniciar().addActionListener(l -> login());
-        vista.getTxtcontra().setText("");
         vista.getLbocultar().setVisible(true);
         vista.getLbmostrar().setVisible(false);
         verContrasenia();
@@ -38,11 +35,10 @@ public class ControladorLogin {
 
         ModeloAdministrador admin = new ModeloAdministrador();
         List<Administrador> listAdmin = admin.listaAdminTabla();
-  
 
         listAdmin.stream().forEach(a -> {
 
-            if (a.getAdm_usuario().equals(vista.getTxtusuario().getText()) && a.getAdm_clave().equals(vista.getTxtcontra().getText())) {
+            if (a.getAdm_usuario().equals(vista.getTxtusuario().getText()) && a.getAdm_clave().equals(vista.getTxtcontrasenia().getText())) {
                 vista.setVisible(false);//Cierro la ventana del login y abro la ventana principal 
                 encontrar = true;//El usuario y la contraseña ingresados por el usuario son iguales a los que estan en la BD
 
@@ -50,8 +46,6 @@ public class ControladorLogin {
                 ControladorPrincipal control = new ControladorPrincipal(vistaPrincipal);
                 control.iniciarControl();
 
-                usuario = vista.getTxtusuario().getText();//Guardo el usuario para luego usarlo en la matricula
-                System.out.println("Usuario login: " + usuario);
             }
         });
 
@@ -69,7 +63,7 @@ public class ControladorLogin {
 
             @Override
             public void mousePressed(MouseEvent e) {
-                vista.getTxtcontra().setEchoChar('●');
+                vista.getTxtcontrasenia().setEchoChar('●');
                 vista.getLbocultar().setVisible(true);
                 vista.getLbmostrar().setVisible(false);
             }
@@ -101,7 +95,7 @@ public class ControladorLogin {
             @Override
             public void mousePressed(MouseEvent e) {
 
-                vista.getTxtcontra().setEchoChar((char) 0);
+                vista.getTxtcontrasenia().setEchoChar((char) 0);
                 vista.getLbmostrar().setVisible(true);
                 vista.getLbocultar().setVisible(false);
             }
@@ -124,7 +118,5 @@ public class ControladorLogin {
 
         vista.getLbocultar().addMouseListener(evento);
     }
-    
 
-    
 }
