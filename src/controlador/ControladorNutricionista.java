@@ -43,7 +43,7 @@ public class ControladorNutricionista {
 
     public void abrirJDlgNutricionista() {
         vista.getjDlgNutricionista().setVisible(true);
-        vista.getjDlgNutricionista().setSize(820, 513);
+        vista.getjDlgNutricionista().setSize(820, 562);
         vista.getjDlgNutricionista().setLocationRelativeTo(null);
         vista.getjDlgNutricionista().setName("Crear nuevo nutricionista");
         vista.getjDlgNutricionista().setTitle("Crear nuevo nutricionista");
@@ -155,7 +155,7 @@ public class ControladorNutricionista {
             //Abrir jDialog de campos de Docente
             vista.getjDlgNutricionista().setVisible(true);
             vista.getjDlgNutricionista().setName("Modificar nutricionista");
-            vista.getjDlgNutricionista().setSize(820, 513);
+            vista.getjDlgNutricionista().setSize(820, 562);
             vista.getjDlgNutricionista().setLocationRelativeTo(null);
             vista.getjDlgNutricionista().setTitle("Modificar nutricionista");
 
