@@ -270,7 +270,7 @@ public class VistaInstructor extends javax.swing.JInternalFrame {
         jPanel2.add(Nocturno, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 186, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        jLabel10.setText("Horario:");
+        jLabel10.setText("Sueldo:");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 240, -1, -1));
         jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 116, 191, -1));
         jPanel2.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 166, 191, -1));
