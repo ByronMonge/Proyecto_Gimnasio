@@ -23,17 +23,14 @@ public class ModeloInstructor extends Instructor {
         super(ins_codigo, ins_codper, ins_areatrabajo, ins_horario, ins_estado, ins_suedo, per_codigo, per_cedula, per_nombre, per_apellido, per_fechaNac, per_telefono, per_direccion);
     }
 
-
-
-
     public boolean crearInstructor() {
-        String sql = "INSERT INTO instructor(ins_codper, ins_areatrabajo, ins_horario, ins_sueldo,ins_estado) VALUES (" + getIns_codper() + ",'" + getIns_areatrabajo() + "', '" + getIns_horario() + "',"+ getIns_suedo() + ", 'A');";
+        String sql = "INSERT INTO instructor(ins_codper, ins_areatrabajo, ins_horario, ins_sueldo,ins_estado) VALUES (" + getIns_codper() + ",'" + getIns_areatrabajo() + "', '" + getIns_horario() + "'," + getIns_suedo() + ", 'A');";
 
         return conpg.accion(sql);
     }
 
     public boolean modificarInstructor() {
-        String sql = "UPDATE instructor SET ins_areatrabajo = '" + getIns_areatrabajo() + "', ins_horario = '" + getIns_horario() + "', ins_sueldo = '" + getIns_suedo()+ "' WHERE ins_codigo = " + getIns_codigo() + ";";
+        String sql = "UPDATE instructor SET ins_areatrabajo = '" + getIns_areatrabajo() + "', ins_horario = '" + getIns_horario() + "', ins_sueldo = '" + getIns_suedo() + "' WHERE ins_codigo = " + getIns_codigo() + ";";
 
         return conpg.accion(sql);
     }
