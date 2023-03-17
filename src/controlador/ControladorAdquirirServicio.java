@@ -14,7 +14,9 @@ import modelo.ModeloAdquirirServicio;
 import modelo.ModeloCliente;
 import modelo.ModeloInstructor;
 import modelo.ModeloNutricionista;
+import modelo.ModeloServicio;
 import modelo.Nutricionista;
+import modelo.Servicio;
 import vista.VistaAdquirirServicio;
 
 public class ControladorAdquirirServicio {
@@ -31,6 +33,7 @@ public class ControladorAdquirirServicio {
     public void iniciarControl() {
         //AdquirirServicio
         vista.getBtnCrear().addActionListener(l -> abrirjDialogAdquirirServicio());
+        vista.getBtnCalcular().addActionListener(l -> calcularTotal());
 
         //Cliente
         vista.getBtnBuscarCli().addActionListener(l -> abrirjDialogCliente());
@@ -43,6 +46,10 @@ public class ControladorAdquirirServicio {
         //Nutricionista
         vista.getBtnBuscarNut().addActionListener(l -> abrirjDialogNutricionista());
         vista.getBtnCargarNut().addActionListener(l -> cargarDatosNutricionistaEnTXT());
+
+        //Servicio
+        vista.getBtnBuscarSer().addActionListener(l -> abrirjDialogServicio());
+        vista.getBtnCargarSer().addActionListener(l -> cargarDatosServicioEnTXT());
     }
 
     public void abrirjDialogAdquirirServicio() {
@@ -53,10 +60,15 @@ public class ControladorAdquirirServicio {
 
         //Quito la visibilidad del txt del codigo del curso
         vista.getTxtCodigoCliente().setVisible(false);
+        vista.getTxtCodigoInstructor().setVisible(false);
+        vista.getTxtCodigoNutricionista().setVisible(false);
+        vista.getTxtCodigoServicio().setVisible(false);
+
         cargarRegistroDeCliente();
         //buscarCurso();
     }
 
+    
     //Todo sobre el registro de clientes en el jDialog
     public void abrirjDialogCliente() {
         vista.getjDlgBuscarCliente().setVisible(true);
@@ -64,8 +76,6 @@ public class ControladorAdquirirServicio {
         vista.getjDlgBuscarCliente().setLocationRelativeTo(null);
         vista.getjDlgBuscarCliente().setTitle("Seleccionar cliente");
 
-        //Quito la visibilidad del txt del codigo del curso
-        // vista.getTxtCodigoCurso().setVisible(false);
         cargarRegistroDeCliente();
         buscarCliente();
     }
@@ -165,8 +175,6 @@ public class ControladorAdquirirServicio {
         vista.getjDlgBuscarInstructor().setLocationRelativeTo(null);
         vista.getjDlgBuscarInstructor().setTitle("Seleccionar instructor");
 
-        //Quito la visibilidad del txt del codigo del curso
-        vista.getTxtCodigoInstructor().setVisible(false);
         cargarRegistroDeInstructor();
         buscarInstructor();
     }
@@ -215,7 +223,7 @@ public class ControladorAdquirirServicio {
                     vista.getTxtCodigoInstructor().setText(String.valueOf(c.getIns_codigo()));
                     vista.getTxtCedulaIns().setText(c.getPer_cedula());
                     vista.getTxtNombreIns().setText(c.getPer_nombre() + " " + c.getPer_apellido());
-                    vista.getTxtSueldoIns().setText(String.valueOf(c.getIns_suedo()));
+                    vista.getSpinnerSueldoIns().setValue(c.getIns_suedo());
                 }
             });
 
@@ -268,8 +276,6 @@ public class ControladorAdquirirServicio {
         vista.getjDlgBuscarNutricionista().setLocationRelativeTo(null);
         vista.getjDlgBuscarNutricionista().setTitle("Seleccionar nutricionista");
 
-        //Quito la visibilidad del txt del codigo del curso
-        //vista.getTxtCodigoCurso().setVisible(false);
         cargarRegistroDeNutricionista();
         buscarNutricionista();
     }
@@ -319,7 +325,7 @@ public class ControladorAdquirirServicio {
                     vista.getTxtCodigoNutricionista().setText(String.valueOf(c.getNutri_codigo()));
                     vista.getTxtCedulaNut().setText(c.getPer_cedula());
                     vista.getTxtNombreNut().setText(c.getPer_nombre() + " " + c.getPer_apellido());
-                    vista.getTxtSueldoNut().setText(String.valueOf(c.getNutri_salario()));
+                    vista.getSpinnerSueldoNut().setValue(c.getNutri_salario());
                 }
             });
 
@@ -363,5 +369,116 @@ public class ControladorAdquirirServicio {
         };
 
         vista.getTxtBuscarNut().addKeyListener(eventoTeclado); //"addKeyListener" es un metodo que se le tiene que pasar como argumento un objeto de tipo keyListener 
+    }
+
+    //Todo sobre el registro de servicio en el jDialog
+    public void abrirjDialogServicio() {
+        vista.getjDlgBuscarServicio().setVisible(true);
+        vista.getjDlgBuscarServicio().setSize(664, 330);
+        vista.getjDlgBuscarServicio().setLocationRelativeTo(null);
+        vista.getjDlgBuscarServicio().setTitle("Seleccionar servicio");
+
+        cargarRegistroDeServicio();
+        buscarServicio();
+    }
+
+    public void cargarRegistroDeServicio() {
+
+        ModeloServicio modeloServicio = new ModeloServicio();
+
+        vista.getTblIns().setRowHeight(25);
+        DefaultTableModel estructuraTabla = (DefaultTableModel) vista.getTblSer().getModel();
+        estructuraTabla.setRowCount(0);
+
+        List<Servicio> servicio = modeloServicio.listaServiciosTabla();
+
+        Holder<Integer> i = new Holder<>(0);
+
+        servicio.stream().forEach(c -> {
+
+            estructuraTabla.addRow(new Object[8]);
+
+            vista.getTblSer().setValueAt(c.getSer_codigo(), i.value, 0);
+            vista.getTblSer().setValueAt(c.getSer_nombre(), i.value, 1);
+            vista.getTblSer().setValueAt(c.getSer_precio(), i.value, 2);
+
+            i.value++;
+        });
+    }
+
+    public void cargarDatosServicioEnTXT() {
+        int fila = vista.getTblSer().getSelectedRow();
+
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Aun no ha seleccionado una fila");
+        } else {
+
+            ModeloServicio modeloServicio = new ModeloServicio();
+            List<Servicio> listap = modeloServicio.listaServiciosTabla();
+
+            listap.stream().forEach(c -> {
+
+                if (c.getSer_codigo() == Integer.parseInt(vista.getTblSer().getValueAt(fila, 0).toString())) {
+
+                    vista.getTxtCodigoServicio().setText(String.valueOf(c.getSer_codigo()));
+                    vista.getTxtNombreSer().setText(c.getSer_nombre());
+                    vista.getSpinnerCostoSer().setValue(c.getSer_precio());
+                }
+            });
+
+            vista.getjDlgBuscarServicio().dispose();
+        }
+    }
+
+    public void buscarServicio() {
+
+        KeyListener eventoTeclado = new KeyListener() {//Crear un objeto de tipo keyListener(Es una interface) por lo tanto se debe implementar sus metodos abstractos
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+                //CODIGO PARA FILTRAR LOS DATOS DIRECTAMENTE DE LA TABLA. NO ELIMINAR. SI FUNCIONA. ES MUY IMPORTANTE
+                TableRowSorter<DefaultTableModel> filtrar;
+
+                DefaultTableModel tabla = (DefaultTableModel) vista.getTblSer().getModel();
+
+                //vista.getTablaconduccion().setAutoCreateRowSorter(true);
+                filtrar = new TableRowSorter<>(tabla);
+                vista.getTblSer().setRowSorter(filtrar);
+
+                try {
+
+                    filtrar.setRowFilter(RowFilter.regexFilter(vista.getTxtBuscarSer().getText())); //Se pasa como parametro el campo de donde se va a obtener la informacion y el (3) es la columna con la cual va a buscar las coincidencias
+                } catch (Exception ex) {
+                    System.out.println("Error: " + ex);
+                }
+            }
+        };
+
+        vista.getTxtBuscarSer().addKeyListener(eventoTeclado); //"addKeyListener" es un metodo que se le tiene que pasar como argumento un objeto de tipo keyListener 
+    }
+
+    public void calcularTotal() {
+        double costoIns = Double.parseDouble(vista.getSpinnerMesesIns().getValue().toString()) * Double.parseDouble(vista.getSpinnerSueldoIns().getValue().toString());
+        double costoNut = Double.parseDouble(vista.getSpinnerMesesNut().getValue().toString()) * Double.parseDouble(vista.getSpinnerSueldoNut().getValue().toString());
+        double costoSer = Double.parseDouble(vista.getSpinnerMesesSer().getValue().toString()) * Double.parseDouble(vista.getSpinnerCostoSer().getValue().toString());
+
+        double total = costoIns + costoNut + costoSer;
+
+        try {
+            vista.getTxtTotal().setText(String.valueOf(total));
+        } catch (NumberFormatException e) {
+            System.out.println("Error");
+        }
     }
 }
