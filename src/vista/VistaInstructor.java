@@ -337,6 +337,7 @@ public class VistaInstructor extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Buscar:");
 
+        btnCrear.setForeground(new java.awt.Color(255, 204, 204));
         btnCrear.setText("Guardar");
 
         btnModificar.setText("Modificar");
